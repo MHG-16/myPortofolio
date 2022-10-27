@@ -1,25 +1,34 @@
 import { faBriefcase, faEnvelope, faHome, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { selectNumeroPageState, setNumeroPage } from '../store/page';
 import styles from '../styles/controlls.module.css';
 
 
-export default function Controlls(){
+export default function Controlls({prefix = ""}: PropsType){
 
     const numeroPage = useSelector(selectNumeroPageState);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const router = useRouter();
 
     return (
     <div className={styles.controlls}>
         <div style={{backgroundPosition: numeroPage===0 ? "left" : "right"}} 
-            onClick={() => dispatch(setNumeroPage(0))}
+            onClick={() =>{setTimeout(() => {
+                dispatch(setNumeroPage(0));
+            }, 100)
+            router.push(prefix + "/")
+        }}
         >
             <i><FontAwesomeIcon icon={faHome}/></i>
         </div>
         <div style={{backgroundPosition: numeroPage===1 ? "left" : "right"}} 
-            onClick={() => dispatch(setNumeroPage(1))}
+            onClick={() => {
+                setTimeout(() =>dispatch(setNumeroPage(1)), 100)
+                router.push(prefix+"/about");
+            }}
         >
             <i><FontAwesomeIcon icon={faUser} /></i>
         </div>
@@ -34,4 +43,8 @@ export default function Controlls(){
         </div>
     </div>
     )
+}
+
+interface PropsType{
+    prefix: string,
 }

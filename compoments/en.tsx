@@ -73,7 +73,7 @@ export default function EnPage() {
           <i><FontAwesomeIcon icon={faReact}/></i>
           <i><FontAwesomeIcon icon={faUbuntu}/></i>
       </div>
-      <Controlls/>
+      <Controlls prefix={""}/>
     </div>
   );
 }
