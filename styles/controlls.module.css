@@ -15,6 +15,9 @@
   margin-bottom: 1rem;
   color: white;
 }
+.controlls div i {
+  font-size: 30px;
+}
 .controlls div:hover {
   transform: scale(1.2);
 }/*# sourceMappingURL=controlls.module.css.map */

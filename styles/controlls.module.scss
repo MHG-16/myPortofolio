@@ -19,6 +19,10 @@ $text-primary-color: #FF4C29;
         margin-bottom: 1rem;
         color: white;
 
+        i{
+            font-size: 30px;
+        }
+
         &:hover{
             transform: scale(1.2);
         }

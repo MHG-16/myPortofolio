@@ -68,6 +68,10 @@ $text-primary-color: #FF4C29;
     grid-template-columns: 10% 10% 10% 10% 10% 10%;
     gap: 5%;
     float: right;
+
+    i{
+        font-size: 50px;
+    }
 }
 
 @media screen and (max-width:750px) {

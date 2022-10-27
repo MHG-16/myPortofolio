@@ -18,28 +18,28 @@ export default function Controlls({prefix = ""}: PropsType){
         <div style={{backgroundPosition: numeroPage===0 ? "left" : "right"}} 
             onClick={() =>{setTimeout(() => {
                 dispatch(setNumeroPage(0));
-            }, 100)
+            }, 300)
             router.push(prefix + "/")
         }}
         >
-            <i><FontAwesomeIcon icon={faHome}/></i>
+            <i className={styles.icons}><FontAwesomeIcon icon={faHome}/></i>
         </div>
-        <div style={{backgroundPosition: numeroPage===1 ? "left" : "right"}} 
+        <div  style={{backgroundPosition: numeroPage===1 ? "left" : "right"}} 
             onClick={() => {
-                setTimeout(() =>dispatch(setNumeroPage(1)), 100)
+                setTimeout(() =>dispatch(setNumeroPage(1)), 300)
                 router.push(prefix+"/about");
             }}
         >
-            <i><FontAwesomeIcon icon={faUser} /></i>
+            <i className={styles.icons}><FontAwesomeIcon icon={faUser} /></i>
         </div>
-        <div style={{backgroundPosition: numeroPage===2 ? "left" : "right"}} 
+        <div className={styles.icons} style={{backgroundPosition: numeroPage===2 ? "left" : "right"}} 
             onClick={() => dispatch(setNumeroPage(2))}>
             <i> <FontAwesomeIcon icon={faBriefcase}/></i>
         </div>
         <div style={{backgroundPosition: numeroPage===3 ? "left" : "right"}} 
             onClick={() => dispatch(setNumeroPage(3))} data-id="contact"
         >
-            <i><FontAwesomeIcon icon={faEnvelope}/></i>
+            <i className={styles.icons}><FontAwesomeIcon icon={faEnvelope}/></i>
         </div>
     </div>
     )

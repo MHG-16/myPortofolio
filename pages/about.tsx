@@ -6,11 +6,16 @@ import certifs from "../data/en/certif"
 import { Image } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { setNumeroPage } from "../store/page";
+import { wrapper } from "../store/store";
+import { useDispatch } from "react-redux";
 
 
 export default function About(){
     const certificates = certifs;
     const [imageActuel, setNumeroImage] = useState(0)
+    const dispatch = useDispatch()
+    dispatch(setNumeroPage(1))
     return (
         <div className={styles.myApp}>
             <main className={styles.mainContainer}>
@@ -43,6 +48,18 @@ export default function About(){
                     onClick={()=> imageActuel+3 !== certificates.length ? setNumeroImage(imageActuel+1): setNumeroImage(0)}
                     ><i><FontAwesomeIcon icon={faArrowRight}/></i></button>
                 </div>
+                <h2>Hobbies</h2>
+                <ul>
+                    <li>Anime and football watching</li>
+                    <li>Fishing</li>
+                    <li>Books reading</li>
+                </ul>
+                <h2>Others informations</h2>
+                <ul>
+                    <li>Date of birth : Januar, 6th 2000</li>
+                    <li>Place of birth: Gardone V.T , Brescia (ita)</li>
+                    <li>place of residence: Moknine 5050 Tunisia</li>
+                </ul>
             </main>
             <Controlls prefix={""}/>
         </div>
