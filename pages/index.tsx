@@ -1,8 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import EnPage from '../compoments/en';
-import { setNumeroPage } from '../store/page';
-import { wrapper } from '../store/store';
 
 
 const Home: NextPage = () => {

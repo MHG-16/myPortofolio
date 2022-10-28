@@ -2,7 +2,7 @@ import { Image } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact, faDocker, faGithub, faJs, faPython, faUbuntu } from "@fortawesome/free-brands-svg-icons";
 
-import styles from "../styles/darkmode.module.css";
+import styles from "../styles/latin/darkmode.module.css";
 import Controlls from "./controlls";
 
 export default function EnPage() {

@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 
 import Controlls from "../compoments/controlls";
-import styles from "../styles/about.module.css";
+import styles from "../styles/latin/about.module.css";
 import certifs from "../data/en/certif"
 import { Image } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { setNumeroPage } from "../store/page";
-import { wrapper } from "../store/store";
 import { useDispatch } from "react-redux";
 
 

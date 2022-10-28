@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { selectNumeroPageState, setNumeroPage } from '../store/page';
-import styles from '../styles/controlls.module.css';
+import styles from '../styles/latin/controlls.module.css';
 
 
 export default function Controlls({prefix = ""}: PropsType){
@@ -33,11 +33,17 @@ export default function Controlls({prefix = ""}: PropsType){
             <i className={styles.icons}><FontAwesomeIcon icon={faUser} /></i>
         </div>
         <div className={styles.icons} style={{backgroundPosition: numeroPage===2 ? "left" : "right"}} 
-            onClick={() => dispatch(setNumeroPage(2))}>
+            onClick={() => {
+                setTimeout(() =>dispatch(setNumeroPage(2)), 300)
+                router.push(prefix+"/workspace");
+            }}>
             <i> <FontAwesomeIcon icon={faBriefcase}/></i>
         </div>
         <div style={{backgroundPosition: numeroPage===3 ? "left" : "right"}} 
-            onClick={() => dispatch(setNumeroPage(3))} data-id="contact"
+            onClick={() => {
+                setTimeout(() =>dispatch(setNumeroPage(3)), 300)
+                router.push(prefix+"/contact");
+            }} data-id="contact"
         >
             <i className={styles.icons}><FontAwesomeIcon icon={faEnvelope}/></i>
         </div>
