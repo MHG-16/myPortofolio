@@ -1,9 +1,14 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { useDispatch, useSelector } from 'react-redux';
 import EnPage from '../../compoments/en';
+import { selectNumeroPageState, setNumeroPage } from '../../store/page';
 
 
 const Home: NextPage = () => {
+  const dispatch = useDispatch()
+  const numeroPage = useSelector(selectNumeroPageState)
+  numeroPage === null ? dispatch(setNumeroPage(0)) : null;
   return (
     <>
       <Head>

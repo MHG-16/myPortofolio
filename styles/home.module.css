@@ -63,6 +63,10 @@
   margin-bottom: 1em;
   display: flex;
 }
+.others li:hover {
+  background-color: #FF4C29;
+  color: aliceblue;
+}
 .others li img {
   margin-right: 10px;
   width: 40px;
@@ -93,9 +97,10 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  cursor: pointer;
 }
 
-.arabeSp {
+#arabeSp {
   display: flex;
   align-items: center;
   justify-items: center;
@@ -104,6 +109,6 @@
   text-align: center;
   float: right;
 }
-.arabeSp img {
+#arabeSp img {
   margin: 0 10px;
 }/*# sourceMappingURL=home.module.css.map */

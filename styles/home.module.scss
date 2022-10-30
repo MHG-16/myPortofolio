@@ -88,6 +88,11 @@ $text-secondary-color: #FB2576;
         margin-bottom: 1em;
         display: flex;
 
+        &:hover{
+            background-color: $text-primary-color;
+            color: aliceblue;
+        }
+
         img{
             margin-right: 10px;
             width: 40px;
@@ -121,9 +126,10 @@ $text-secondary-color: #FB2576;
     margin-left: 5px;
     border-radius: 10px;
     height: fit-content;
+    cursor: pointer
 }
 @import url('https://fonts.googleapis.com/css2?family=Mada:wght@500&display=swap');
-.arabeSp{
+#arabeSp{
     display: flex;
     align-items: center;
     justify-items: center;
