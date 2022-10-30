@@ -18,7 +18,7 @@ export default function Controlls({prefix = ""}: PropsType){
         <div style={{backgroundPosition: numeroPage===0 ? "left" : "right"}} 
             onClick={() =>{setTimeout(() => {
                 dispatch(setNumeroPage(0));
-            }, 300)
+            }, 250)
             router.push(prefix + "/")
         }}
         >
@@ -26,7 +26,7 @@ export default function Controlls({prefix = ""}: PropsType){
         </div>
         <div  style={{backgroundPosition: numeroPage===1 ? "left" : "right"}} 
             onClick={() => {
-                setTimeout(() =>dispatch(setNumeroPage(1)), 300)
+                setTimeout(() =>dispatch(setNumeroPage(1)), 250)
                 router.push(prefix+"/about");
             }}
         >
@@ -34,14 +34,14 @@ export default function Controlls({prefix = ""}: PropsType){
         </div>
         <div className={styles.icons} style={{backgroundPosition: numeroPage===2 ? "left" : "right"}} 
             onClick={() => {
-                setTimeout(() =>dispatch(setNumeroPage(2)), 300)
+                setTimeout(() =>dispatch(setNumeroPage(2)), 250)
                 router.push(prefix+"/workspace");
             }}>
             <i> <FontAwesomeIcon icon={faBriefcase}/></i>
         </div>
         <div style={{backgroundPosition: numeroPage===3 ? "left" : "right"}} 
             onClick={() => {
-                setTimeout(() =>dispatch(setNumeroPage(3)), 300)
+                setTimeout(() =>dispatch(setNumeroPage(3)), 250)
                 router.push(prefix+"/contact");
             }} data-id="contact"
         >

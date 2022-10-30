@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+.contactContent {
+  background-color: #082032;
+  font-family: Raleway, sans-serif;
+}
+
+.contactContainer {
+  display: grid;
+  grid-template-columns: 30% 50%;
+}
+.contactContainer .rightPartie {
+  margin: 4em;
+  color: aliceblue;
+}
+.contactContainer .rightPartie h2 {
+  color: #FF4C29;
+  font-weight: 600;
+  font-size: x-large;
+}
+.contactContainer .rightPartie .contactField {
+  margin-top: 1em;
+  margin-left: 1em;
+  font-size: 20px;
+}
+.contactContainer .rightPartie .contactField i {
+  margin-right: 1em;
+}
+.contactContainer .leftPartie {
+  margin: 4em 0;
+  color: #FB2576;
+}
+.contactContainer .leftPartie h3 {
+  color: #FF4C29;
+}
+.contactContainer .leftPartie .screen {
+  background: linear-gradient(90deg, #000, #2C3333);
+  position: relative;
+  padding: 4em;
+  box-shadow: 0px 0px 24px #000;
+  display: grid;
+  grid-template-columns: 17.5% 77.5%;
+  gap: 5%;
+}
+.contactContainer .leftPartie .screen .imageContent {
+  padding: 7%;
+  font-size: x-large;
+  text-align: center;
+}
+.contactContainer .leftPartie form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contactContainer .leftPartie form input {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 1em;
+  background-color: #FFAC41;
+  color: #323232;
+  font-size: large;
+  border-radius: 4px;
+}
+.contactContainer .leftPartie form textarea {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  resize: none;
+  border-radius: 4px;
+  background-color: #FFAC41;
+  color: #323232;
+  font-size: large;
+}
+.contactContainer .leftPartie form button {
+  margin-top: 2em;
+  background-color: #FFAC41;
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.5);
+  padding: 16px;
+  border-radius: 1em;
+  color: #323232;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.recaptcha {
+  margin-top: 1em;
+}/*# sourceMappingURL=contact.module.css.map */

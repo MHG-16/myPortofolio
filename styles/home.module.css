@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mada:wght@500&display=swap");
+.container {
+  background-color: #082032;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Press start 2P", sans-serif;
+  font-size: large;
+  color: white;
+}
+
+.dino {
+  width: 9px;
+  height: 9px;
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  -webkit-animation: move 400ms steps(1) infinite;
+          animation: move 400ms steps(1) infinite;
+  box-shadow: 0px -9px 0 0 #535353, 9px 0 0 0 #535353, -18px 0 0 0 #535353, -27px 0 0 0 #535353, -27px -9px 0 0 #535353;
+}
+.dino::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  margin: -171px 0 0 27px;
+  display: block;
+  box-shadow: 0px 18px 0 18px #535353, 10px 9px 0 18px #535353, 50px 14px 0 13px #535353, 44px 1px 0 10px #535353, -9px 54px 0 9px #535353, -1px 89px 0 10px #535353, -4px 58px 0 13px #535353, -36px 99px 0 27px #535353, -27px 54px 0 0 #535353, -36px 72px 0 9px #535353, 45px 45px 0 0 #535353, 36px 45px 0 0 #535353, 27px 45px 0 0 #535353, 18px 45px 0 0 #535353, 18px 72px 0 0 #535353, 27px 72px 0 0 #535353, 27px 81px 0 0 #535353, -5px 112px 0 5px #535353, -23px 139px 0 5px #535353, -18px 153px 0 0 #535353, -54px 135px 0 9px #535353, -36px 135px 0 0 #535353, -54px 153px 0 0 #535353, -63px 153px 0 0 #535353, -63px 99px 0 18px #535353, -72px 126px 0 0 #535353, -90px 108px 0 0 #535353, -90px 90px 0 9px #535353, -90px 90px 0 9px #535353, -108px 81px 0 0 #535353, -90px 72px 0 0 #535353, -99px 72px 0 0 #535353, -99px 63px 0 0 #535353, -108px 72px 0 0 #535353, -108px 63px 0 0 #535353, -108px 54px 0 0 #535353, -108px 45px 0 0 #535353;
+}
+
+@-webkit-keyframes move {
+  0%, 100% {
+    margin-top: 9px;
+    box-shadow: 9px -9px 0 0 #535353, 18px 0px 0 0 #535353, 27px -9px 0 0 #535353, -45px 0px 0 0 #535353, -45px -18px 0 0 #535353, -54px -9px 0 0 #535353, -72px -9px 0 0 #6E6E6E, -90px 0px 0 0 #6E6E6E, -99px -18px 0 0 #6E6E6E;
+  }
+  50% {
+    margin-top: 0px;
+    box-shadow: 0px -9px 0 0 #535353, 9px 0 0 0 #535353, -18px 0 0 0 #535353, -27px 0 0 0 #535353, -27px -9px 0 0 #535353;
+  }
+}
+
+@keyframes move {
+  0%, 100% {
+    margin-top: 9px;
+    box-shadow: 9px -9px 0 0 #535353, 18px 0px 0 0 #535353, 27px -9px 0 0 #535353, -45px 0px 0 0 #535353, -45px -18px 0 0 #535353, -54px -9px 0 0 #535353, -72px -9px 0 0 #6E6E6E, -90px 0px 0 0 #6E6E6E, -99px -18px 0 0 #6E6E6E;
+  }
+  50% {
+    margin-top: 0px;
+    box-shadow: 0px -9px 0 0 #535353, 9px 0 0 0 #535353, -18px 0 0 0 #535353, -27px 0 0 0 #535353, -27px -9px 0 0 #535353;
+  }
+}
+.startLink {
+  display: flex;
+  position: fixed;
+  top: 50%;
+}
+
+.others {
+  display: none;
+}
+.others li {
+  margin-bottom: 1em;
+  display: flex;
+}
+.others li img {
+  margin-right: 10px;
+  width: 40px;
+  height: 25px;
+}
+
+.active {
+  color: #FB2576;
+}
+
+.langues {
+  margin: -10px 10px;
+  background-color: #2C394B;
+  padding: 10px;
+  border-radius: 1em;
+  cursor: pointer;
+}
+.langues:hover .others {
+  display: block;
+}
+
+.startBtn {
+  padding: 10px;
+  background-color: #FF4C29;
+  margin-top: -10px;
+  margin-left: 5px;
+  border-radius: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.arabeSp {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  font-family: "Mada", sans-serif;
+  font-size: x-large;
+  text-align: center;
+  float: right;
+}
+.arabeSp img {
+  margin: 0 10px;
+}/*# sourceMappingURL=home.module.css.map */

@@ -4,12 +4,12 @@ import { AppState } from "./store";
 
 
 export interface numeroPage{
-    numeroPage: number;
+    numeroPage: number|null;
 }
 
 //intial State
 const intialState : numeroPage = {
-    numeroPage: 0,
+    numeroPage: null,
 }
 
 //Actual Slice
