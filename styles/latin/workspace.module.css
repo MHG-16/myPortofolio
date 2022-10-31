@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
+.container {
+  font-family: "Prompt", sans-serif;
+  background-color: #082032;
+  margin-top: 10%;
+}
+.container .chars {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: space-around;
+  color: #D6C5F0;
+  text-align: center;
+}
+.container .chars .itemChar {
+  display: grid;
+  place-items: center;
+}
+.container .chars .itemChar span {
+  background-color: #5727A3;
+  padding: 30px;
+  width: 85px;
+  -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  display: grid;
+  place-items: center;
+}
+.container .chars .itemChar span i {
+  font-size: 25px;
+}
+.container .chars .itemChar h3 {
+  margin-top: 10px;
+  font-size: larger;
+  font-weight: 800;
+}
+
+.workContainer h3 {
+  color: #FF4C29;
+  margin-left: 5%;
+  margin-top: 2em;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1868px) {
+  .container {
+    width: 100%;
+  }
+  .container .chars {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 5%;
+    gap: 2%;
+    place-items: center;
+  }
+}
+@media screen and (max-width: 850px) {
+  .container .chars .itemChar span {
+    padding: 10px;
+    width: 45px;
+  }
+}
+@media screen and (max-width: 680px) {
+  .container {
+    padding: 15%;
+  }
+  .container .chars {
+    grid-template-columns: 30% 30%;
+    gap: 10%;
+    margin-right: 20%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 0% 15% 0 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  .container .chars {
+    grid-template-columns: 25% 25%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .container .chars {
+    padding-top: 15%;
+    grid-template-columns: 70%;
+    margin-right: 5%;
+  }
+  .container .chars p {
+    width: 70%;
+  }
+}/*# sourceMappingURL=workspace.module.css.map */

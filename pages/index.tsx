@@ -39,7 +39,7 @@ const Home: NextPage = () =>   {
                     </div>
                     <div className={styles.startLink}>choose the langue
                     <ul className={styles.langues}>
-                        <li className={styles.langueSelected}><b>{langueActuel()}</b></li>
+                        <li className={styles.langueSelected} id={langue === "ar" ? styles.arabelg : ""}><b>{langueActuel()}</b></li>
                         <div className={styles.others}>
                             <li><hr/></li>
                             <li onClick={() => setLangue("en")} className={ langue === "en" ? styles.active : "" }><Image src="/uk.png" alt="uk"/>English </li>
