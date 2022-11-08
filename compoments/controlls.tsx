@@ -7,7 +7,7 @@ import { selectNumeroPageState, setNumeroPage } from '../store/page';
 import styles from '../styles/latin/controlls.module.css';
 
 
-export default function Controlls({prefix = ""}: PropsType){
+export default function Controlls({prefix }: PropsType){
 
     const numeroPage = useSelector(selectNumeroPageState);
     const dispatch = useDispatch();

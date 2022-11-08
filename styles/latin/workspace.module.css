@@ -43,6 +43,33 @@
   font-weight: bold;
 }
 
+.nav {
+  margin-top: 1em;
+  margin-left: 1em;
+}
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  text-align: center;
+  background-color: #5727A3;
+  width: 80%;
+  color: #D6C5F0;
+}
+.nav ul li {
+  display: inline;
+  padding: 15px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+.nav ul .active {
+  background-color: #A3C7D6;
+  color: #3F3B6C;
+}
+
 @media screen and (max-width: 1868px) {
   .container {
     width: 100%;
@@ -63,7 +90,7 @@
 }
 @media screen and (max-width: 680px) {
   .container {
-    padding: 15%;
+    padding: 0% 15% 0 0;
   }
   .container .chars {
     grid-template-columns: 30% 30%;
@@ -80,6 +107,10 @@
   .container .chars {
     grid-template-columns: 25% 25%;
   }
+  .nav ul li {
+    grid-template-columns: 33% 33% 33%;
+    padding: 5px;
+  }
 }
 @media screen and (max-width: 400px) {
   .container .chars {
@@ -90,4 +121,26 @@
   .container .chars p {
     width: 70%;
   }
+  .workContainer h3 {
+    margin-top: 3em;
+  }
+  .nav ul {
+    grid-template-columns: 33% 33% 33%;
+    width: 90%;
+  }
+  .nav ul li {
+    padding: 5px;
+  }
+}
+.allSection {
+  display: grid;
+  width: 80%;
+  grid-template-columns: 47% 47%;
+  gap: 2.5%;
+  margin-top: 1em;
+}
+.allSection span {
+  margin-bottom: 1em;
+  border-radius: 1em;
+  border: 2px solid #5727A3;
 }/*# sourceMappingURL=workspace.module.css.map */

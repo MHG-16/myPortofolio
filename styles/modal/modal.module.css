@@ -1,0 +1,20 @@
+.modal_overlay {
+  z-index: 9999;
+  width: 100vw;
+  height: 110vh;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalBox {
+  display: block;
+  background: white;
+  width: 70%;
+  height: 70%;
+  padding: 1rem;
+  border-radius: 1rem;
+}/*# sourceMappingURL=modal.module.css.map */

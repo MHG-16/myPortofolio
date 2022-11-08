@@ -28,6 +28,32 @@ const works = [
             {img_url: "/wano_api/pdf.png", img_alt: "download facture pdf"},
         ]
     },
+    {
+        name: "Mini app Banko Transaction",
+        language_programming: "react Js",
+        descriptin: "",
+        img_haupt:{
+            img_url: "/Mini_Banko_Transaction/homepage.png",
+            img_alt :"homepage"
+        },
+        imgs: [{
+            img_url: "/Mini_Banko_Transaction/ErrorPage.png",
+            img_alt: "error page",
+        },
+        {
+            img_url: "/Mini_Banko_Transaction/createCompte.png",
+            img_alt: "Transaction page"
+        },
+        {
+            img_url: "/Mini_Banko_Transaction/createCompte.png",
+            img_alt: "create Compte page"
+        },
+        {
+            img_url: "/Mini_Banko_Transaction/ListofTransaction.png",
+            img_alt: "ListOfTransaction page"
+        }
+    ]
+    }
 ]
 
 export default works;

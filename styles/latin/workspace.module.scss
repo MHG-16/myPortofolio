@@ -3,6 +3,8 @@ $secondary-color: #2C394B;
 $primary-color: #082032;
 $text-primary-color: #FF4C29;
 $text-secondary-color: #FB2576;
+$trio-color: #5727A3;
+$text-trio-color: #D6C5F0;
 
 .container {
     font-family: "Prompt", sans-serif;
@@ -55,6 +57,34 @@ $text-secondary-color: #FB2576;
     }
 }
 
+.nav{
+    margin-top: 1em;
+    margin-left: 1em;
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        text-align: center;
+        background-color: $trio-color;
+        width: 80%;
+        
+        color: $text-trio-color;
+
+        li{
+            display: inline;
+            padding: 15px;
+            height: max-content;
+        }
+
+        .active {
+            background-color: #A3C7D6;
+            color: #3F3B6C;
+        }
+    }
+}
+
 @media screen and (max-width: 1868px) {
     .container{
         width: 100%;
@@ -84,7 +114,7 @@ $text-secondary-color: #FB2576;
 
 @media screen and (max-width:680px){
     .container {
-        padding: 15%;
+        padding: 0% 15% 0 0;
         
     .chars{
         grid-template-columns: 30% 30%;
@@ -98,11 +128,17 @@ $text-secondary-color: #FB2576;
     .container {
         padding: 0% 15% 0 0;
     }
+
 }
 
 @media screen and (max-width:450px) {
     .container .chars{
         grid-template-columns: 25% 25%;
+    }
+
+    .nav ul li {
+        grid-template-columns: 33% 33% 33%;
+        padding: 5px;
     }
     
 }
@@ -115,5 +151,32 @@ $text-secondary-color: #FB2576;
             width: 70%;
         }
     }
+
+    .workContainer h3 {
+        margin-top: 3em;
+    }
+
+    .nav {
+        ul {
+        grid-template-columns: 33% 33% 33%;
+        width: 90%;
+        li{
+        padding: 5px;
+        }
+    }
     
+    }
+}
+
+.allSection {
+    display: grid;
+    width: 80%;
+    grid-template-columns: 47% 47% ;
+    gap: 2.5%;
+    margin-top: 1em;
+    span {
+        margin-bottom: 1em;
+        border-radius: 1em; 
+        border: 2px solid $trio-color;
+    }
 }
