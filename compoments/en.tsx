@@ -1,15 +1,12 @@
 import { Image } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact, faDocker, faGithub, faJs, faPython, faUbuntu } from "@fortawesome/free-brands-svg-icons";
-import {serverSideTranslations} from "next-i18next/serverSideTranslations"
 
 import styles from "../styles/latin/darkmode.module.css";
 import Controlls from "./controlls";
-import { useTranslation } from "react-i18next";
 
 
 export default function EnPage() {
-  const { t } = useTranslation("");
   return (
     <div className={styles.mainContent}>
       <div className={styles.headerContent}>
@@ -23,10 +20,10 @@ export default function EnPage() {
         </div>
         <div className="right-header">
           <h2 className="name">
-            {t("home.desc_myself")} <span className={styles.name}>Guibane Mohamed Hedi</span>.
+            {("home.desc_myself")} <span className={styles.name}>Guibane Mohamed Hedi</span>.
           </h2>
           <p>
-            {t("home.desc_detailed_part1")}.<br/>
+            {("home.desc_detailed_part1")}.<br/>
             I master the different technical stages of creating a website or a web application; 
             from understanding user needs, to frontend and backend development and maintenance.
           </p>
@@ -79,10 +76,4 @@ export default function EnPage() {
   );
 }
 
-export async function getStaticProps({ locale }: any) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common"]))
-    }
-  };
-}
+

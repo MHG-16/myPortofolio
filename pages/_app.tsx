@@ -5,7 +5,6 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import { wrapper } from '../store/store';
 import '../styles/globals.css'
-import { appWithTranslation } from 'next-i18next';
 
 config.autoAddCss = false
 
@@ -17,5 +16,5 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default wrapper.withRedux(appWithTranslation(MyApp));
+export default wrapper.withRedux(MyApp);
 

@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import { useDispatch, useSelector } from 'react-redux';
+
 import EnPage from '../../compoments/en';
 import { selectNumeroPageState, setNumeroPage } from '../../store/page';
 
@@ -24,14 +24,6 @@ const Home: NextPage = () => {
   )
 }
 
-export async function getStaticProps({ locale }: any){
-
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['home'])),
-    }
-  }
-}
 
 
 export default Home
