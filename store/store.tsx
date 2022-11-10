@@ -1,5 +1,6 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
+import { languageStateSlice } from "./language";
 
 import { numeroPageSlice } from "./page";
 
@@ -8,6 +9,7 @@ export const makeStore = () => configureStore(
     {
         reducer:{
             [numeroPageSlice.name] : numeroPageSlice.reducer,
+            [languageStateSlice.name]: languageStateSlice.reducer,
         }
     }
 )
