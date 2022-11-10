@@ -3,10 +3,13 @@ import { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectLanguageState, setLanguageState } from "../store/language";
 import styles from "../styles/home.module.css";
 
 const Home: NextPage = () =>   {
-    const [langue, setLangue] = useState("en");
+    const langue = useSelector(selectLanguageState);
+    const dispatch = useDispatch();
     const router = useRouter();
     const langueActuel = ():string => {
         if (langue === "en") {
@@ -42,11 +45,11 @@ const Home: NextPage = () =>   {
                         <li className={styles.langueSelected} id={langue === "ar" ? styles.arabelg : ""}><b>{langueActuel()}</b></li>
                         <div className={styles.others}>
                             <li><hr/></li>
-                            <li onClick={() => setLangue("en")} className={ langue === "en" ? styles.active : "" }><Image src="/uk.png" alt="uk"/>English </li>
-                            <li onClick={() => setLangue("fr")} className={ langue === "fr" ? styles.active : "" }><Image src="/france.png" alt="fr"/>Français</li>
-                            <li onClick={() => setLangue("it")} className={ langue === "it" ? styles.active : "" }><Image src="/italy.jpeg" alt="it"/>Italiano</li>
-                            <li onClick={() => setLangue("de")} className={ langue === "de" ? styles.active : "" }><Image src="/germany.jpeg" alt="de"/>Deutsch</li>
-                            <li onClick={() => setLangue("ar")} className={ langue === "ar" ? styles.active : "" } id={styles.arabeSp}>العربية <Image src="/tunisie.png" alt="tun"/></li>
+                            <li onClick={() => dispatch(setLanguageState("en"))} className={ langue === "en" ? styles.active : "" }><Image src="/uk.png" alt="uk"/>English </li>
+                            <li onClick={() => dispatch(setLanguageState("fr"))} className={ langue === "fr" ? styles.active : "" }><Image src="/france.png" alt="fr"/>Français</li>
+                            <li onClick={() => dispatch(setLanguageState("it"))} className={ langue === "it" ? styles.active : "" }><Image src="/italy.jpeg" alt="it"/>Italiano</li>
+                            <li onClick={() => dispatch(setLanguageState("de"))} className={ langue === "de" ? styles.active : "" }><Image src="/germany.jpeg" alt="de"/>Deutsch</li>
+                            <li onClick={() => dispatch(setLanguageState("ar"))} className={ langue === "ar" ? styles.active : "" } id={styles.arabeSp}>العربية <Image src="/tunisie.png" alt="tun"/></li>
                         </div>
                     </ul>
                     and press 
