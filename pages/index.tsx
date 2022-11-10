@@ -50,7 +50,7 @@ const Home: NextPage = () =>   {
                         </div>
                     </ul>
                     and press 
-                    <a className={styles.startBtn} onClick={() =>router.push("/"+langue)}>start</a></div>
+                    <a className={styles.startBtn} onClick={() =>router.push("/"+"sections")}>start</a></div>
                 </div>
             </>
         )
