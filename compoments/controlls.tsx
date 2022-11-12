@@ -7,7 +7,7 @@ import { selectNumeroPageState, setNumeroPage } from '../store/page';
 import styles from '../styles/latin/controlls.module.css';
 
 
-export default function Controlls({prefix }: PropsType){
+export default function Controlls(){
 
     const numeroPage = useSelector(selectNumeroPageState);
     const dispatch = useDispatch();
@@ -19,7 +19,7 @@ export default function Controlls({prefix }: PropsType){
             onClick={() =>{setTimeout(() => {
                 dispatch(setNumeroPage(0));
             }, 250)
-            router.push(prefix + "/")
+            router.push("/sections/")
         }}
         >
             <i className={styles.icons}><FontAwesomeIcon icon={faHome}/></i>
@@ -27,7 +27,7 @@ export default function Controlls({prefix }: PropsType){
         <div  style={{backgroundPosition: numeroPage===1 ? "left" : "right"}} 
             onClick={() => {
                 setTimeout(() =>dispatch(setNumeroPage(1)), 250)
-                router.push(prefix+"/about");
+                router.push("/sections/about/");
             }}
         >
             <i className={styles.icons}><FontAwesomeIcon icon={faUser} /></i>
@@ -35,14 +35,14 @@ export default function Controlls({prefix }: PropsType){
         <div className={styles.icons} style={{backgroundPosition: numeroPage===2 ? "left" : "right"}} 
             onClick={() => {
                 setTimeout(() =>dispatch(setNumeroPage(2)), 250)
-                router.push(prefix+"/workspace");
+                router.push("/sections/workspace");
             }}>
             <i> <FontAwesomeIcon icon={faBriefcase}/></i>
         </div>
         <div style={{backgroundPosition: numeroPage===3 ? "left" : "right"}} 
             onClick={() => {
                 setTimeout(() =>dispatch(setNumeroPage(3)), 250)
-                router.push(prefix+"/contact");
+                router.push("/sections/contact");
             }} data-id="contact"
         >
             <i className={styles.icons}><FontAwesomeIcon icon={faEnvelope}/></i>
@@ -51,6 +51,3 @@ export default function Controlls({prefix }: PropsType){
     )
 }
 
-interface PropsType{
-    prefix: string,
-}

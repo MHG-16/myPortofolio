@@ -1,5 +1,21 @@
 {
-    "desc_myself": "Hallo, ich bin",
-    "job": "My job is web developer",
-    "desc_detailed_part1": "Ich lernte in verschiedenen Programmiersprachen (JavaScript, TypeScript, Python ...) programmiern und erstellte persönliche Projekte. Aufgrund des Fortschritts in Technologie und Tools müssen Webanwendungen Qualitätsprodukte sein. Deshalb werde ich meinen Code verbessern und Best Practices anwenden"
+    "home":{
+        "desc_myself": "Hallo, Ich bin ",
+        "job": "Ich arbeite als Webentwickler",
+        "desc_detailed_part1": "I lernte in verschiedene programming Sprache(JavaScript, TypeScript, Python ... ) programmieren and herstellt personal projects. Aufgrund des Fortschritts in Technologie und Tools müssen Webanwendungen Qualitätsprodukte sein. Daher werde ich meinen Code verbessern und Best Practices anwenden",
+        "desc_detailed_part2": "Ich wusste die verschiedenen technischen Phasen der Erstellung einer Website oder einer Webanwendung; vom Verständnis der Benutzeranforderungen bis hin zur Frontend- und Backend-Entwicklung und -Wartung.",
+        "skills1": "Legen Sie Best Practices fest, um die Codequalität sicherzustellen",
+        "skills2": "Anpassungsfähigkeit, Fähigkeit, an verschiedenen Themen/Universen zu arbeiten",
+        "langueTitle": "Sprache",
+        "informatiqueTitle": "Informatik"
+    },
+    "about": {
+        "EducationTitle": "Abitur",
+        "BachelorTitle": "Abitur Mathematik",
+        "BachelorDate": "Juni 2019, High School Said Boubaker Moknine Tunesien",
+        "LicenseTitle": "Bachelor in Software Engineering",
+        "LicenseDate": "Sep. 2022, Highe Institute of Computer Science and Mathematics Monastir Tunesien",
+        "certificatesTitle": "Zertifikate"
+    }
+    
 }

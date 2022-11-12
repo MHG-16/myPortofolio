@@ -1,12 +1,14 @@
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
+import path from 'path';
 import { useDispatch, useSelector } from 'react-redux';
 
-import EnPage from '../../compoments/en';
+import EnPage from '../../compoments/homePAge';
+import { parseCookies } from '../../helpers';
 import { selectNumeroPageState, setNumeroPage } from '../../store/page';
 
 
-const Home: NextPage = () => {
+const Home: NextPage = ({data}: any) => {
   const dispatch = useDispatch()
   const numeroPage = useSelector(selectNumeroPageState)
   numeroPage === null ? dispatch(setNumeroPage(0)) : null;
@@ -14,15 +16,34 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>My portofolio</title>
-        <meta name="description" content="my portofolio" />
-        <link rel="icon" type="image/jpg" href="/logo.jpg" />
-        <meta charSet='utf-8' />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       </Head>
-      <EnPage />
+      <EnPage {...data}/>
     </>
   )
 }
+
+export const getServerSideProps: GetServerSideProps = async({req, res}:any) =>{
+  const data = parseCookies(req)
+  if (res) {
+      if (Object.keys(data).length === 0 && data.constructor === Object) {
+        res.writeHead(301, { Location: "/" })
+        res.end()
+      }
+  }
+  const languageState = data.langState
+  const pathFile = path.join("/locales/"+ "" + languageState, "common.json");
+  let dataJson = {};
+  await fetch("http://localhost:3000" + pathFile)
+        .then(res =>  res.json())
+        .then(json => {dataJson = json; console.log(dataJson)})
+        .finally(() => console.log("ok"))
+
+  return {
+    props: {
+      data:dataJson,
+    },
+  };
+};
 
 
 

@@ -4,11 +4,15 @@ import { faReact, faDocker, faGithub, faJs, faPython, faUbuntu } from "@fortawes
 
 import styles from "../styles/latin/darkmode.module.css";
 import Controlls from "./controlls";
+import React from "react";
+import { WordLanguage } from "../types/globalsType";
+import LanguagesMenu from "./langueMenu";
 
 
-export default function EnPage() {
-  return (
+export default  function EnPage(dataJson: WordLanguage) {
+    return (
     <div className={styles.mainContent}>
+      <LanguagesMenu/>
       <div className={styles.headerContent}>
         <div className={styles.leftHeader}>
           <Image
@@ -20,12 +24,10 @@ export default function EnPage() {
         </div>
         <div className="right-header">
           <h2 className="name">
-            {("home.desc_myself")} <span className={styles.name}>Guibane Mohamed Hedi</span>.
+            {dataJson.home.desc_myself}<span className={styles.name}>Guibane Mohamed Hedi</span>. {dataJson.home.job}.
           </h2>
           <p>
-            {("home.desc_detailed_part1")}.<br/>
-            I master the different technical stages of creating a website or a web application; 
-            from understanding user needs, to frontend and backend development and maintenance.
+            {dataJson.home.desc_detailed_part1}.<br/>{dataJson.home.desc_detailed_part2}.
           </p>
           <button className={styles.mainbtn}>
             Download CV 
@@ -40,14 +42,14 @@ export default function EnPage() {
           <li>Backend and frontend development of websites and web applications.</li>
           <li>Maintenance, bug fixing and improvement of web sites or applications.</li>
           <li>Set up various unit, end to end, regression und vulnerability tests</li>
-          <li>Etablish best practices to ensure code quality</li>
+          <li>{dataJson.home.skills1}</li>
           <li>Database administration with mysql</li>
           <li>little knowledge in marketing and SEO</li>
-          <li>Adaptability, ability to work on various subjects/universes.</li>
+          <li>{dataJson.home.skills2}</li>
         </ul>
       </div>
       <div className={styles.skills}>
-        <h2>Informatique</h2>
+        <h2>{dataJson.home.informatiqueTitle}</h2>
         <ul>
           <li>Use Git and Github to control and follow my projects</li>
           <li>Languages and frameworks( Vanilla Js, nextJs, React, ReactNative, Flask, Flutter...)</li>
@@ -58,7 +60,7 @@ export default function EnPage() {
         </ul>
       </div>
       <div className={styles.skills}>
-        <h2>Langues</h2>
+        <h2>{dataJson.home.langueTitle}</h2>
         <ul>
           <li>Deutsch(courant B1, OSD test)</li>
         </ul>
@@ -71,9 +73,7 @@ export default function EnPage() {
           <i><FontAwesomeIcon icon={faReact}/></i>
           <i><FontAwesomeIcon icon={faUbuntu}/></i>
       </div>
-      <Controlls prefix={"/en"}/>
+      <Controlls/>
     </div>
   );
 }
-
-

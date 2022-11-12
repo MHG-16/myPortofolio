@@ -1,3 +1,27 @@
-{desc_myself: "Bonjour, je suis"}
-{job:"Mon travail est un développeur web"}
-{desc_detailed_part1: "J'ai appris à coder sur différents langages de programmation (JavaScript, TypeScript, Python ...) et créé des projets personnels. En raison des progrès de la technologie et des outils, les applications Web doivent être des produits de qualité. Par conséquent, je vais améliorer mon code et utiliser les meilleures pratiques"}
+{
+    "home":{
+        "desc_myself": "Bonjour, je suis ",
+        "job": "Je travaille comme un développeur web",
+        "desc_detailed_part1": "J'ai appris à coder sur différents langages de programmation (JavaScript, TypeScript, Python ...) et créé des projets personnels. En raison des progrès de la technologie et des outils, les applications Web doivent être des produits de qualité. Par conséquent, je vais améliorer mon code et utiliser les meilleures pratiques",
+        "desc_detailed_part2": "Je maîtrise les différentes étapes techniques de création d'un site internet ou d'une application web ; de la compréhension des besoins des utilisateurs au développement et à la maintenance frontend et backend.",
+        "skills1": "Établir les meilleures pratiques pour assurer la qualité du code",
+        "skills2": "Adaptabilité, capacité à travailler sur des sujets/univers variés",
+        "langueTitle": "Langues",
+        "informatiqueTitle": "Informatique"
+    },
+    "about": {
+        "EducationTitle": "Éducation",
+        "BachelorTitle": "Bac Mathematiques",
+        "BachelorDate": "Juin 2019, Lycée Said Boubaker Moknine Tunisie",
+        "LicenseTitle": "Licence en Sciences Informatique: spécialité Genie logiciel et systèmes d'information",
+        "LicenseDate": "Sep. 2022, Institut Supérieur d'Informatique et mathématiques de Monastir",
+        "certificatesTitle": "Certificats"
+    },
+    "workspace": {
+        "DynamicDesc":"I siti web non devono essere statici,Amo dare vita alle pagine.",
+        "SpeedDesc": "Cerco di creare pagine facendo attenzione alla velocità",
+        "ResponsiveDesc":"I miei layout funzioneranno su qualsiasi dispositivo,mobile or pc",
+        "myWorksTitle": "I miei lovori"
+    }
+    
+}

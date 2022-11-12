@@ -1,9 +1,16 @@
 import { faGaugeHigh, faMobileScreen, faRocket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import path from "path";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { selectLanguageState } from "../store/language";
 
 import styles from "../styles/latin/workspace.module.css";
+import { WordLanguage } from "../types/globalsType";
 
-export default function Header() {
+const fetcher = (...args: any) => fetch(args).then(res => res.json())
+
+export default function Header(data: WordLanguage) {
   return (
     <div className={styles.chars}>
       <div className={styles.itemChar}>
@@ -14,8 +21,7 @@ export default function Header() {
         </span>
         <h3>Dynamic</h3>
         <p>
-          Websites don{"'"}t have to be static,
-          <br />I love making pages come to life.
+          {data.workspace.DynamicDesc}
         </p>
       </div>
       <div className={styles.itemChar}>
@@ -26,8 +32,7 @@ export default function Header() {
         </span>
         <h3>Speed</h3>
         <p>
-          Websites don{"'"}t have to be static,
-          <br />I love making pages come to life.
+          {data.workspace.SpeedDesc}
         </p>
       </div>
       <div className={styles.itemChar}>
@@ -38,8 +43,7 @@ export default function Header() {
         </span>
         <h3>Responsive</h3>
         <p>
-          My layouts will work on any device,
-          <br /> pc or mobile.
+          {data.workspace.SpeedDesc}
         </p>
       </div>
     </div>

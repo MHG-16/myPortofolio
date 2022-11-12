@@ -1,16 +1,15 @@
 import { Image } from "@chakra-ui/react";
 import { NextPage } from "next";
 import Head from "next/head";
-import { useRouter } from "next/router";
+import Router from "next/router";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { selectLanguageState, setLanguageState } from "../store/language";
+import { useCookies } from "react-cookie";
+import { CookieSetOptions } from "universal-cookie";
 import styles from "../styles/home.module.css";
 
 const Home: NextPage = () =>   {
-    const langue = useSelector(selectLanguageState);
-    const dispatch = useDispatch();
-    const router = useRouter();
+    const [langue, setLanguageState] = useState("en");
+    const [, setCookies] = useCookies(["langState"])
     const langueActuel = ():string => {
         if (langue === "en") {
             return "English"
@@ -31,10 +30,6 @@ const Home: NextPage = () =>   {
     return (<>
                 <Head>
                     <title>Home</title>
-                    <meta name="description" content="Home" />
-                    <link rel="icon" type="image/jpg" href="/logo.jpg" />
-                    <meta charSet='utf-8' />
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                 </Head>
                 <div className={styles.container}>
                     <div className={styles.tiere}>
@@ -45,18 +40,28 @@ const Home: NextPage = () =>   {
                         <li className={styles.langueSelected} id={langue === "ar" ? styles.arabelg : ""}><b>{langueActuel()}</b></li>
                         <div className={styles.others}>
                             <li><hr/></li>
-                            <li onClick={() => dispatch(setLanguageState("en"))} className={ langue === "en" ? styles.active : "" }><Image src="/uk.png" alt="uk"/>English </li>
-                            <li onClick={() => dispatch(setLanguageState("fr"))} className={ langue === "fr" ? styles.active : "" }><Image src="/france.png" alt="fr"/>Français</li>
-                            <li onClick={() => dispatch(setLanguageState("it"))} className={ langue === "it" ? styles.active : "" }><Image src="/italy.jpeg" alt="it"/>Italiano</li>
-                            <li onClick={() => dispatch(setLanguageState("de"))} className={ langue === "de" ? styles.active : "" }><Image src="/germany.jpeg" alt="de"/>Deutsch</li>
-                            <li onClick={() => dispatch(setLanguageState("ar"))} className={ langue === "ar" ? styles.active : "" } id={styles.arabeSp}>العربية <Image src="/tunisie.png" alt="tun"/></li>
+                            <li onClick={() => setLanguageState("en")} className={ langue === "en" ? styles.active : "" }><Image src="/uk.png" alt="uk"/>English </li>
+                            <li onClick={() => setLanguageState("fr")} className={ langue === "fr" ? styles.active : "" }><Image src="/france.png" alt="fr"/>Français</li>
+                            <li onClick={() => setLanguageState("it")} className={ langue === "it" ? styles.active : "" }><Image src="/italy.jpeg" alt="it"/>Italiano</li>
+                            <li onClick={() => setLanguageState("de")} className={ langue === "de" ? styles.active : "" }><Image src="/germany.jpeg" alt="de"/>Deutsch</li>
+                            <li onClick={() => setLanguageState("ar")} className={ langue === "ar" ? styles.active : "" } id={styles.arabeSp}>العربية <Image src="/tunisie.png" alt="tun"/></li>
                         </div>
                     </ul>
                     and press 
-                    <a className={styles.startBtn} onClick={() =>router.push("/"+"sections")}>start</a></div>
+                    <a className={styles.startBtn} onClick={() =>goTohome(langue, setCookies)}>start</a></div>
                 </div>
             </>
         )
+}
+
+
+function goTohome(langue: string, setCookies: (name: "langState", value: any, options?: CookieSetOptions | undefined) => void) {
+    setCookies("langState", langue, {
+        path: "/",
+        maxAge: 3600, // Expires after 1hr
+        sameSite: true,
+    })
+    Router.push("/"+"sections");
 }
 
 export default Home;

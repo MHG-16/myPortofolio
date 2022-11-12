@@ -9,9 +9,14 @@ import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { selectNumeroPageState, setNumeroPage } from "../../store/page";
 import { useDispatch, useSelector } from "react-redux";
 import Head from "next/head";
+import path from "path";
+import { wrapper } from "../../store/store";
+import { WordLanguage } from "../../types/globalsType";
+import { GetServerSideProps } from "next";
+import { parseCookies } from "../../helpers";
 
 
-export default function About(){
+export default function About(dataJson: WordLanguage){
     const certificates = certifs;
     const [imageActuel, setNumeroImage] = useState(0)
     const dispatch = useDispatch()
@@ -21,25 +26,21 @@ export default function About(){
         <>
             <Head>
                 <title>About</title>
-                <meta name="description" content="About" />
-                <link rel="icon" type="image/jpg" href="/logo.jpg" />
-                <meta charSet='utf-8' />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             </Head>
             <div className={styles.myApp}>
                 <main className={styles.mainContainer}>
-                    <h2 >Education</h2>
+                    <h2 >{dataJson.about.EducationTitle}</h2>
                     <ul>
                         <li>
-                            <h3>Mathematics Bachelor</h3>
-                            <h4>Juin 2019, High School Said Boubaker Moknine Tunisie</h4>
+                            <h3>{dataJson.about.BachelorTitle}</h3>
+                            <h4>{dataJson.about.BachelorDate}</h4>
                         </li>
                         <li>
-                            <h3>Degree in software engineering</h3>
-                            <h4>September 2022, Highe Institute of Computer Science and Mathematics Monastir Tunisie</h4>
+                            <h3>{dataJson.about.LicenseTitle}</h3>
+                            <h4>{dataJson.about.LicenseDate}</h4>
                         </li>
                     </ul>
-                    <h2>Certificats</h2>
+                    <h2>{dataJson.about.certificatesTitle}</h2>
                     <div>
                         <button className={styles.btns}
                         onClick={() => imageActuel!==1? setNumeroImage(0):setNumeroImage(imageActuel-1)}>
@@ -58,8 +59,31 @@ export default function About(){
                         ><i><FontAwesomeIcon icon={faArrowRight}/></i></button>
                     </div>
                 </main>
-                <Controlls prefix={"/en"} />
+                <Controlls />
             </div>
         </>
     )
 }
+
+export const getServerSideProps: GetServerSideProps = async({req, res}:any) =>{
+    const data = parseCookies(req)
+    if (res) {
+        if (Object.keys(data).length === 0 && data.constructor === Object) {
+          res.writeHead(301, { Location: "/" })
+          res.end()
+        }
+    }
+    const languageState = data.langState
+    let dataJson ={}
+    const pathFile = path.join("/locales/"+ "" + languageState, "common.json");
+    await fetch("http://localhost:3000" + pathFile)
+          .then(res =>  res.json())
+          .then(json => {dataJson = json; console.log(pathFile)})
+          .finally(() => console.log("ok"))
+  
+    return {
+      props: {
+        ...dataJson,
+      },
+    };
+};

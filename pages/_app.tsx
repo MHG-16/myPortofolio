@@ -5,13 +5,20 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import { wrapper } from '../store/store';
 import '../styles/globals.css'
+import Head from 'next/head';
+import { CookiesProvider } from 'react-cookie';
 
 config.autoAddCss = false
 
 function MyApp({ Component, pageProps }: AppProps) {
   return( 
   <ChakraProvider>
-    <Component {...pageProps}/>
+    <Head>
+        <meta name="viewport" content="viewport-fit=cover" />
+    </Head>
+    <CookiesProvider>
+      <Component {...pageProps}/>
+    </CookiesProvider>
   </ChakraProvider>
   )
 }

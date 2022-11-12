@@ -7,27 +7,51 @@ import Controlls from "../../compoments/controlls";
 import CustomModal from "../../compoments/customModal";
 import Header from "../../compoments/workshopheader";
 import WorkspaceNav from "../../compoments/workspaceNav";
+import path from "path";
+import { parseCookies } from "../../helpers";
+import { GetServerSideProps } from "next";
 
-export default function WorkSpace() {
+export default function WorkSpace({dataJson} : any) {
   const {isOpen, toggle} = useModal();
   const [images, setImages] = useState<any>();
   return (
     <>
       <Head>
         <title>Workspace</title>
-        <link rel="icon" type="image/jpg" href="/logo.jpg" />
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <div className={styles.container}>
-        <Header/>
+        <Header {...dataJson}/>
         <div className={styles.workContainer}>
-          <h3>My works</h3>
+          <h3>{dataJson.workspace.myWorksTitle}</h3>
           <WorkspaceNav setImages={setImages} toggle={toggle}/>
         </div>
       </div>
-      <Controlls prefix={"/en"} />
+      <Controlls />
       {isOpen &&<CustomModal toggle={toggle} isOpen={isOpen} title={images.title} images={images.images}/>}
     </>
   );
 }
+
+
+export const getServerSideProps: GetServerSideProps = async({req, res}:any) =>{
+  const data = parseCookies(req)
+  if (res) {
+      if (Object.keys(data).length === 0 && data.constructor === Object) {
+        res.writeHead(301, { Location: "/" })
+        res.end()
+      }
+  }
+  const languageState = data.langState
+  let dataJson ={}
+  const pathFile = path.join("/locales/"+ "" + languageState, "common.json");
+  await fetch("http://localhost:3000" + pathFile)
+        .then(res =>  res.json())
+        .then(json => {dataJson = json; console.log(dataJson)})
+        .finally(() => console.log("ok"))
+
+  return {
+    props: {
+      dataJson,
+    },
+  };
+};
