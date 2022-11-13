@@ -9,8 +9,10 @@ const customStyles = {
       padding: 10,
       '&:hover': {
         color: "black"
+      },
+      'last-of-type':{
+        textAlign: "right",
       }
-      
     }),
     control:(styles) => ({
         ...styles,

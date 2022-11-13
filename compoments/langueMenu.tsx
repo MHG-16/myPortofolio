@@ -11,6 +11,7 @@ export default function LanguagesMenu() {
   const [, setCookies] = useCookies(["langState"])
   const router = useRouter();
   const options = [
+    {value: "en", label: "English"},
     {value: "de", label: "Deutsch"},
     {value: "fr", label: "Français"},
     {value: "it", label: "Italiano"},
