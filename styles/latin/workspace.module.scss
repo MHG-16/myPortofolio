@@ -6,13 +6,13 @@ $text-secondary-color: #FB2576;
 $trio-color: #5727A3;
 $text-trio-color: #D6C5F0;
 
-.container {
+.darkMode .container {
     font-family: "Prompt", sans-serif;
     background-color: $primary-color;
     margin-top: 10%;
 
     .chars {
-        width: 100%;
+        width: 80%;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -57,10 +57,11 @@ $text-trio-color: #D6C5F0;
     }
 }
 
-.nav{
+.nav {
     margin-top: 1em;
     margin-left: 1em;
-    ul{
+
+    ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -69,10 +70,10 @@ $text-trio-color: #D6C5F0;
         text-align: center;
         background-color: $trio-color;
         width: 80%;
-        
+
         color: $text-trio-color;
 
-        li{
+        li {
             display: inline;
             padding: 15px;
             height: max-content;
@@ -85,42 +86,134 @@ $text-trio-color: #D6C5F0;
     }
 }
 
+.lightMode {
+    $secondary-color: #2C394B;
+    $primary-color: #FFF5E4;
+    $text-primary-color: #FF4C29;
+    $text-secondary-color: #FB2576;
+    $trio-color: #92B4EC;
+    $text-trio-color: #030303;
+
+    .container {
+        font-family: "Prompt", sans-serif;
+        background-color: $primary-color;
+        margin-top: 10%;
+
+        .chars {
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            align-content: space-around;
+            color: $text-trio-color;
+            text-align: center;
+
+            .itemChar {
+                display: grid;
+                place-items: center;
+                
+
+                span {
+                    background-color: $trio-color;
+                    padding: 30px;
+                    width: 85px;
+                    -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+                    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+                    display: grid;
+                    place-items: center;
+                    
+
+                    i {
+                        font-size: 25px;
+                    }
+                }
+
+                h3 {
+                    margin-top: 10px;
+                    font-size: larger;
+                    font-weight: 800;
+                }
+            }
+        }
+    }
+
+    .workContainer {
+        h3 {
+            color: $text-primary-color;
+            margin-left: 5%;
+            margin-top: 2em;
+            font-size: x-large;
+            font-weight: bold;
+        }
+    }
+
+    .nav {
+        margin-top: 1em;
+        margin-left: 1em;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            text-align: center;
+            background-color: $trio-color;
+            width: 80%;
+
+            color: $text-trio-color;
+
+            li {
+                display: inline;
+                padding: 15px;
+                height: max-content;
+            }
+
+            .active {
+                background-color: #A3C7D6;
+                color: #3F3B6C;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 1868px) {
-    .container{
+    .container {
         width: 100%;
-        .chars{
+
+        .chars {
             width: 100%;
             display: grid;
             grid-template-columns: 20% 20% 20% 5%;
-            gap:2%;
+            gap: 2%;
             place-items: center;
+        }
     }
-}
 }
 
 @media screen and (max-width:850px) {
-    .container{
-        .chars{
-            .itemChar{
-                span{
+    .container {
+        .chars {
+            .itemChar {
+                span {
                     padding: 10px;
                     width: 45px;
                 }
             }
         }
     }
-    
+
 }
 
-@media screen and (max-width:680px){
+@media screen and (max-width:680px) {
     .container {
         padding: 0% 15% 0 0;
-        
-    .chars{
-        grid-template-columns: 30% 30%;
-        gap: 10%;
-        margin-right: 20%;
-    }
+
+        .chars {
+            grid-template-columns: 30% 30%;
+            gap: 10%;
+            margin-right: 20%;
+        }
     }
 }
 
@@ -132,7 +225,7 @@ $text-trio-color: #D6C5F0;
 }
 
 @media screen and (max-width:450px) {
-    .container .chars{
+    .container .chars {
         grid-template-columns: 25% 25%;
     }
 
@@ -140,14 +233,16 @@ $text-trio-color: #D6C5F0;
         grid-template-columns: 33% 33% 33%;
         padding: 5px;
     }
-    
+
 }
+
 @media screen and (max-width:400px) {
-    .container .chars{
+    .container .chars {
         padding-top: 15%;
         grid-template-columns: 70%;
         margin-right: 5%;
-        p{
+
+        p {
             width: 70%;
         }
     }
@@ -158,25 +253,27 @@ $text-trio-color: #D6C5F0;
 
     .nav {
         ul {
-        grid-template-columns: 33% 33% 33%;
-        width: 90%;
-        li{
-        padding: 5px;
+            grid-template-columns: 33% 33% 33%;
+            width: 90%;
+
+            li {
+                padding: 5px;
+            }
         }
-    }
-    
+
     }
 }
 
 .allSection {
     display: grid;
     width: 80%;
-    grid-template-columns: 47% 47% ;
+    grid-template-columns: 47% 47%;
     gap: 2.5%;
     margin-top: 1em;
+
     span {
         margin-bottom: 1em;
-        border-radius: 1em; 
+        border-radius: 1em;
         border: 2px solid $trio-color;
     }
 }

@@ -1,13 +1,35 @@
 $secondary-color: #2C394B;
 $primary-color: #082032;
-$text-primary-color: #FF4C29;
+$text-primary-color: #7579E7;
 
-.controlls {
+.darkMode .controlls {
     position: fixed;
     top: 30%;
     right: 5%;
 
-    
+    .themeButton {
+        position: fixed;
+        right: 5%;
+        top: 10%;
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(to right, black 50%, $secondary-color 50%);
+        background-size: 200% 100%;
+        transition: all .75s ease-out;
+        padding: 20px;
+        text-align: center;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        color: white;
+
+        i {
+            font-size: 30px;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
 
     div {
         width: 80px;
@@ -21,35 +43,81 @@ $text-primary-color: #FF4C29;
         margin-bottom: 1rem;
         color: white;
 
-        i{
+        i {
             font-size: 30px;
         }
 
-        &:hover{
+        &:hover {
             transform: scale(1.2);
         }
     }
 }
-.themeButton {
-        position: absolute;
+
+.lightMode {
+    $secondary-color: #DFD3C3;
+    $primary-color: #FFF5E4;
+    $text-primary-color: #B1B2FF !default;
+    $text-secondary-color: #850E35;
+
+    .controlls {
+        position: fixed;
+        top: 30%;
         right: 5%;
-        top : 10%;
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(to right, black 50%, $secondary-color 50%);
+
+        .themeButton {
+            position: fixed;
+            right: 5%;
+            top: 10%;
+            width: 80px;
+            height: 80px;
+            background: $text-primary-color;
+            background-size: 200% 100%;
+            transition: all .75s ease-out;
+            padding: 20px;
+            text-align: center;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            color: white;
+
+            i {
+                font-size: 30px;
+            }
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+        div {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(to right, black 50%, $secondary-color 50%);
+            background-size: 200% 100%;
+            transition: all .75s ease-out;
+            padding: 20px;
+            text-align: center;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            color: white;
+            box-shadow: #082032 4px 2px 12px 6px ;
+
+            i {
+                font-size: 30px;
+            }
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+
+    .controlls div {
+        $secondary-color: #EEF1FF;
+        $primary-color: #B1B2FF;
+        background: linear-gradient(to right, $text-primary-color 50%, $secondary-color 50%);
         background-size: 200% 100%;
         transition: all .75s ease-out;
-        padding: 20px;
-        text-align: center;
-        border-radius: 50%;
-        margin-bottom: 1rem;
-        color: white;
-
-        i{
-            font-size: 30px;
-        }
-
-        &:hover{
-            transform: scale(1.2);
-        }
+        color: #AAC4FF;
+    }
 }

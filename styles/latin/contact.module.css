@@ -1,39 +1,38 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
-.contactContent {
-  background-color: #082032;
+.lightMode .contactContent {
+  background-color: #FFF5E4;
   font-family: Raleway, sans-serif;
 }
-
-.contactContainer {
+.lightMode .contactContainer {
   display: grid;
   grid-template-columns: 30% 50%;
 }
-.contactContainer .rightPartie {
+.lightMode .contactContainer .rightPartie {
   margin: 4em;
-  color: aliceblue;
+  color: #FF4C29;
 }
-.contactContainer .rightPartie h2 {
+.lightMode .contactContainer .rightPartie h2 {
   color: #FF4C29;
   font-weight: 600;
   font-size: x-large;
 }
-.contactContainer .rightPartie .contactField {
+.lightMode .contactContainer .rightPartie .contactField {
   margin-top: 1em;
   margin-left: 1em;
   font-size: 20px;
 }
-.contactContainer .rightPartie .contactField i {
+.lightMode .contactContainer .rightPartie .contactField i {
   margin-right: 1em;
 }
-.contactContainer .leftPartie {
+.lightMode .contactContainer .leftPartie {
   margin: 4em 0;
-  color: #FB2576;
+  color: #E3FCBF;
 }
-.contactContainer .leftPartie h3 {
-  color: #FF4C29;
+.lightMode .contactContainer .leftPartie h3 {
+  color: #E3FCBF;
 }
-.contactContainer .leftPartie .screen {
-  background: linear-gradient(90deg, #000, #2C3333);
+.lightMode .contactContainer .leftPartie .screen {
+  background: linear-gradient(90deg, #14C38E, #00FFAB);
   position: relative;
   padding: 4em;
   box-shadow: 0px 0px 24px #000;
@@ -41,17 +40,99 @@
   grid-template-columns: 17.5% 77.5%;
   gap: 5%;
 }
-.contactContainer .leftPartie .screen .imageContent {
+.lightMode .contactContainer .leftPartie .screen .imageContent {
   padding: 7%;
   font-size: x-large;
   text-align: center;
 }
-.contactContainer .leftPartie form {
+.lightMode .contactContainer .leftPartie form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.contactContainer .leftPartie form input {
+.lightMode .contactContainer .leftPartie form input {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 1em;
+  background-color: #B8F1B0;
+  color: #323232;
+  font-size: large;
+  border-radius: 4px;
+}
+.lightMode .contactContainer .leftPartie form textarea {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  resize: none;
+  border-radius: 4px;
+  background-color: #B8F1B0;
+  color: #323232;
+  font-size: large;
+}
+.lightMode .contactContainer .leftPartie form button {
+  margin-top: 2em;
+  background-color: #B8F1B0;
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.5);
+  padding: 16px;
+  border-radius: 1em;
+  color: #323232;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.darkMode .contactContent {
+  background-color: #082032;
+  font-family: Raleway, sans-serif;
+}
+.darkMode .contactContainer {
+  display: grid;
+  grid-template-columns: 30% 50%;
+}
+.darkMode .contactContainer .rightPartie {
+  margin: 4em;
+  color: aliceblue;
+}
+.darkMode .contactContainer .rightPartie h2 {
+  color: #FF4C29;
+  font-weight: 600;
+  font-size: x-large;
+}
+.darkMode .contactContainer .rightPartie .contactField {
+  margin-top: 1em;
+  margin-left: 1em;
+  font-size: 20px;
+}
+.darkMode .contactContainer .rightPartie .contactField i {
+  margin-right: 1em;
+}
+.darkMode .contactContainer .leftPartie {
+  margin: 4em 0;
+  color: #FF4C29;
+}
+.darkMode .contactContainer .leftPartie h3 {
+  color: #FF4C29;
+}
+.darkMode .contactContainer .leftPartie .screen {
+  background: linear-gradient(90deg, #080808, #082032);
+  position: relative;
+  padding: 4em;
+  box-shadow: 0px 0px 24px #000;
+  display: grid;
+  grid-template-columns: 17.5% 77.5%;
+  gap: 5%;
+}
+.darkMode .contactContainer .leftPartie .screen .imageContent {
+  padding: 7%;
+  font-size: x-large;
+  text-align: center;
+}
+.darkMode .contactContainer .leftPartie form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.darkMode .contactContainer .leftPartie form input {
   width: 100%;
   margin-bottom: 1em;
   padding: 1em;
@@ -60,7 +141,7 @@
   font-size: large;
   border-radius: 4px;
 }
-.contactContainer .leftPartie form textarea {
+.darkMode .contactContainer .leftPartie form textarea {
   width: 100%;
   padding: 12px 20px;
   box-sizing: border-box;
@@ -70,7 +151,7 @@
   color: #323232;
   font-size: large;
 }
-.contactContainer .leftPartie form button {
+.darkMode .contactContainer .leftPartie form button {
   margin-top: 2em;
   background-color: #FFAC41;
   box-shadow: 0 0 24px rgba(255, 255, 255, 0.5);

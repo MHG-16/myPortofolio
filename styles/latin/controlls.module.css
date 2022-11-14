@@ -1,29 +1,10 @@
-.controlls {
+.darkMode .controlls {
   position: fixed;
   top: 30%;
   right: 5%;
 }
-.controlls div {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(to right, black 50%, #2C394B 50%);
-  background-size: 200% 100%;
-  transition: all 0.75s ease-out;
-  padding: 20px;
-  text-align: center;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-  color: white;
-}
-.controlls div i {
-  font-size: 30px;
-}
-.controlls div:hover {
-  transform: scale(1.2);
-}
-
-.themeButton {
-  position: absolute;
+.darkMode .controlls .themeButton {
+  position: fixed;
   right: 5%;
   top: 10%;
   width: 80px;
@@ -37,9 +18,79 @@
   margin-bottom: 1rem;
   color: white;
 }
-.themeButton i {
+.darkMode .controlls .themeButton i {
   font-size: 30px;
 }
-.themeButton:hover {
+.darkMode .controlls .themeButton:hover {
   transform: scale(1.2);
+}
+.darkMode .controlls div {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(to right, black 50%, #2C394B 50%);
+  background-size: 200% 100%;
+  transition: all 0.75s ease-out;
+  padding: 20px;
+  text-align: center;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  color: white;
+}
+.darkMode .controlls div i {
+  font-size: 30px;
+}
+.darkMode .controlls div:hover {
+  transform: scale(1.2);
+}
+
+.lightMode .controlls {
+  position: fixed;
+  top: 30%;
+  right: 5%;
+}
+.lightMode .controlls .themeButton {
+  position: fixed;
+  right: 5%;
+  top: 10%;
+  width: 80px;
+  height: 80px;
+  background: #7579E7;
+  background-size: 200% 100%;
+  transition: all 0.75s ease-out;
+  padding: 20px;
+  text-align: center;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  color: white;
+}
+.lightMode .controlls .themeButton i {
+  font-size: 30px;
+}
+.lightMode .controlls .themeButton:hover {
+  transform: scale(1.2);
+}
+.lightMode .controlls div {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(to right, black 50%, #DFD3C3 50%);
+  background-size: 200% 100%;
+  transition: all 0.75s ease-out;
+  padding: 20px;
+  text-align: center;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  color: white;
+  box-shadow: #082032 4px 2px 12px 6px;
+}
+.lightMode .controlls div i {
+  font-size: 30px;
+}
+.lightMode .controlls div:hover {
+  transform: scale(1.2);
+}
+.lightMode .controlls div {
+  background: linear-gradient(to right, #7579E7 50%, #EEF1FF 50%);
+  background-size: 200% 100%;
+  transition: all 0.75s ease-out;
+  color: #AAC4FF;
 }/*# sourceMappingURL=controlls.module.css.map */

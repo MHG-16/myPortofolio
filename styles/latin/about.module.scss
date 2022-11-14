@@ -3,68 +3,154 @@ $primary-color: #082032;
 $text-primary-color: #FF4C29;
 $text-secondary-color: #FB2576;
 
-.myApp{
-    background-color: $primary-color;
-    color:aliceblue;
+
+.lightMode {
+    $secondary-color: #2C394B;
+    $primary-color: #FFF5E4;
+    $text-primary-color: #EE6983;
+    $text-secondary-color: #850E35;
+
+    .myApp {
+        background-color: $primary-color;
+        color: $secondary-color;
+    }
+
+    .mainContainer {
+        margin: 4em;
+
+        h2 {
+            color: $text-primary-color;
+            font-size: x-large;
+            font-weight: 600;
+            margin-top: 1em;
+        }
+
+        ul {
+            margin-left: 1em;
+
+            li {
+                font-size: large;
+                list-style: disc;
+
+                h3 {
+                    color: $text-secondary-color;
+                    font-weight: 400;
+                    margin: 1em 0;
+                }
+            }
+        }
+
+        div {
+            $background-scroll: #28DF99;
+            display: grid;
+            place-items: center;
+            padding: 1% 1% 1% 1%;
+            grid-template-columns: 2% 25% 25% 25% 2%;
+            width: 90%;
+            gap: 5%;
+            background-color: $background-scroll;
+            margin-top: 1em;
+
+            div {
+                $backgroundColorItem: #99F3BD;
+                display: block;
+                text-align: center;
+                background-color: $backgroundColorItem;
+                box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+                padding: 1em;
+                animation: slideIn 1s forwards;
+                -webkit-animation: slideIn 1s forwards;
+                -moz-animation: slideIn 1s forwards;
+
+                h3 {
+                    font-size: large;
+                    margin-top: 1em;
+                    font-weight: 600;
+                }
+            }
+
+            button {
+                color: #28DF99;
+                background-color: #D2F6C5;
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+                padding: 15px;
+                font-size: 25px;
+            }
+        }
+    }
 }
 
-.mainContainer{
-    margin: 4em;
-    h2{
-        color: $text-primary-color;
-        font-size: x-large;
-        font-weight: 600;
-        margin-top: 1em;
+.darkMode {
+    .myApp {
+        background-color: $primary-color;
+        color: aliceblue;
     }
 
-    ul{
-        margin-left: 1em;
-        li{
-            font-size: large;
-            list-style: disc;
-            h3{
-                color: $text-secondary-color;
-                font-weight: 400;
-                margin: 1em 0;
-            }
+    .mainContainer {
+        margin: 4em;
+
+        h2 {
+            color: $text-primary-color;
+            font-size: x-large;
+            font-weight: 600;
+            margin-top: 1em;
         }
-    }
-    
-    div{
-        display: grid;
-        place-items: center;
-        padding:1% 1% 1% 1%;
-        grid-template-columns:2% 25% 25% 25% 2%;
-        width: 90%;
-        gap: 5%;
-        background-color: #916BBF;
-        margin-top: 1em;
-        div{
-            display: block;
-            text-align: center;
-            background-color: #3D2C8D;
-            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-            padding: 1em;
-            animation: slideIn 1s forwards;
-            -webkit-animation: slideIn 1s forwards;
-            -moz-animation: slideIn 1s forwards;
-            
-            h3{
+
+        ul {
+            margin-left: 1em;
+
+            li {
                 font-size: large;
-                margin-top: 1em;
-                font-weight: 600;
+                list-style: disc;
+
+                h3 {
+                    color: $text-secondary-color;
+                    font-weight: 400;
+                    margin: 1em 0;
+                }
             }
         }
 
-        button{
-            color: #E9A6A6;
-            background-color: #160040;
-            height: 60px;
-            width: 60px;
-            border-radius:50%;
-            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-            padding: 15px;
-            font-size: 25px;
+        div {
+            display: grid;
+            place-items: center;
+            padding: 1% 1% 1% 1%;
+            grid-template-columns: 2% 25% 25% 25% 2%;
+            width: 90%;
+            gap: 5%;
+            background-color: #916BBF;
+            margin-top: 1em;
+
+            div {
+                display: block;
+                text-align: center;
+                background-color: #3D2C8D;
+                box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+                padding: 1em;
+                animation: slideIn 1s forwards;
+                -webkit-animation: slideIn 1s forwards;
+                -moz-animation: slideIn 1s forwards;
+
+                h3 {
+                    font-size: large;
+                    margin-top: 1em;
+                    font-weight: 600;
+                }
+            }
+
+            button {
+                color: #E9A6A6;
+                background-color: #160040;
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+                padding: 15px;
+                font-size: 25px;
+            }
         }
     }
 }
@@ -74,7 +160,7 @@ $text-secondary-color: #FB2576;
         transform: translateX(-20%);
     }
 
-    100%{
+    100% {
         transform: translateX(0%);
     }
 }
@@ -84,7 +170,7 @@ $text-secondary-color: #FB2576;
         transform: translateX(-20%);
     }
 
-    100%{
+    100% {
         transform: translateX(0%);
     }
 }
@@ -94,7 +180,7 @@ $text-secondary-color: #FB2576;
         transform: translateX(-20%);
     }
 
-    100%{
+    100% {
 
         transform: translateX(0%);
     }

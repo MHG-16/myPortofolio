@@ -17,7 +17,7 @@ export default function Contact() {
   numeroPage === null ? dispatch(setNumeroPage(3)) : null;
   const captchaRef = useRef(null)
   return (
-    <>
+    <div className={styles.darkMode}>
       <Head>
         <title>Contact</title>
       </Head>
@@ -55,7 +55,7 @@ export default function Contact() {
                   <input type="text" placeholder="Your name" required />
                   <input type="email" placeholder="Your email" required />
                   <textarea placeholder="Your message......" required />
-                  <ReCAPTCHA style={{marginTop: "2em"}} theme="dark" sitekey={"6LcOE74iAAAAABHd_aFKxUtvMAMthA_5gWQ6SUE1"} ref={captchaRef}/>
+                  <ReCAPTCHA style={{marginTop: "2em"}} theme="light" sitekey={"6LcOE74iAAAAABHd_aFKxUtvMAMthA_5gWQ6SUE1"} ref={captchaRef}/>
                   <button type="submit" >Send a message</button>
                 </form>
               </div>
@@ -64,6 +64,6 @@ export default function Contact() {
         </main>
         <Controlls/>
       </div>
-    </>
+    </div>
   );
 }

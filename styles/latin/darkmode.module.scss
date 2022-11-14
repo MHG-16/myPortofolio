@@ -1,85 +1,171 @@
-$secondary-color: #2C394B;
-$primary-color: #082032;
-$text-primary-color: #FF4C29;
+.darkMode {
+    $secondary-color: #2C394B !default;
+    $primary-color: #082032 !default;
+    $text-primary-color: #FF4C29 !default;
 
-.mainContent {
-    background-color: $primary-color;
-    font-family: "roboto-slab", sans-serif;
-    transition: all 0.4s ease-in-out;
-    color: white !important;
-}
+    .mainContent {
+        background-color: $primary-color;
+        font-family: "roboto-slab", sans-serif;
+        transition: all 0.4s ease-in-out;
+        color: white !important;
+    }
 
-.headerContent {
-    display: grid;
-    grid-template-columns: 20% 50%;
-    gap: 2%;
-    margin: 2rem;
-    .name{
-        color: $text-primary-color;
+    .headerContent {
+        display: grid;
+        grid-template-columns: 20% 50%;
+        gap: 2%;
+        margin: 2rem;
+
+        .name {
+            color: $text-primary-color;
+            font-weight: 600;
+            font-size: large;
+        }
+    }
+
+    .mainbtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
         font-weight: 600;
+        position: relative;
+        border: 2px solid $secondary-color;
+        background: $secondary-color;
         font-size: large;
-    }
-}
+        padding: 1em;
+        margin-top: 2rem;
 
-.mainbtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    font-weight: 600;
-    position: relative;
-    border: 2px solid $secondary-color;
-    background: $secondary-color;
-    font-size: large;
-    padding: 1em;
-    margin-top: 2rem;
+        background: linear-gradient(to left, black 50%, $secondary-color 50%);
+        background-size: 200% 100%;
+        background-position: right;
+        transition: all .5s ease-out;
 
-    background: linear-gradient(to left, black 50%, $secondary-color 50%);
-    background-size: 200% 100%;
-    background-position: right ;
-    transition: all .5s ease-out;
+        &:hover {
+            background-position: left;
+        }
 
-    &:hover {
-        background-position: left ;
     }
 
-}
+    .skills {
+        margin: 0 2rem;
 
-.skills {
-    margin: 0 2rem;
-    h2{
-        font-size: x-large;
+        h2 {
+            font-size: x-large;
+            font-weight: 600;
+            color: $text-primary-color;
+        }
+
+        ul {
+            margin: 1rem;
+
+            li {
+                list-style-type: disc;
+            }
+        }
+    }
+
+    .logos {
+        width: 30%;
+        display: grid;
+        grid-template-columns: 10% 10% 10% 10% 10% 10%;
+        gap: 5%;
+        float: right;
+
+        i {
+            font-size: 50px;
+        }
+    }
+}
+// light mode 
+.lightMode {
+    $secondary-color: #DFD3C3;
+    $primary-color: #FFF5E4 ;
+    $text-primary-color: #EE6983 !default;
+    $text-secondary-color: #850E35 ;
+
+    .mainContent {
+        background-color: $primary-color;
+        font-family: "roboto-slab", sans-serif;
+        transition: all 0.4s ease-in-out;
+        color: $text-secondary-color !important;
+    }
+
+    .headerContent {
+        display: grid;
+        grid-template-columns: 20% 50%;
+        gap: 2%;
+        margin: 2rem;
+
+        .name {
+            color: $text-primary-color;
+            font-weight: 600;
+            font-size: large;
+        }
+    }
+
+    .mainbtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
         font-weight: 600;
-        color: $text-primary-color;
+        position: relative;
+        border: 2px solid $secondary-color;
+        background: $secondary-color;
+        font-size: large;
+        padding: 1em;
+        margin-top: 2rem;
+
+        background: linear-gradient(to left, $text-primary-color 50%, $secondary-color 50%);
+        background-size: 200% 100%;
+        background-position: right;
+        transition: all .5s ease-out;
+
+        &:hover {
+            background-position: left;
+            color: #030303;
+        }
+
     }
 
-    ul{
-        margin: 1rem;
-        
-        li{
-            list-style-type: disc;
+    .skills {
+        margin: 0 2rem;
+
+        h2 {
+            font-size: x-large;
+            font-weight: 600;
+            color: $text-primary-color;
+        }
+
+        ul {
+            margin: 1rem;
+
+            li {
+                list-style-type: disc;
+            }
+        }
+    }
+
+    .logos {
+        width: 30%;
+        display: grid;
+        grid-template-columns: 10% 10% 10% 10% 10% 10%;
+        gap: 5%;
+        float: right;
+
+        i {
+            font-size: 50px;
         }
     }
 }
 
-.logos {
-    width: 30%;
-    display: grid;
-    grid-template-columns: 10% 10% 10% 10% 10% 10%;
-    gap: 5%;
-    float: right;
-
-    i{
-        font-size: 50px;
-    }
-}
-
 @media screen and (max-width:750px) {
-    .headerContent
-    {
+    .headerContent {
         grid-template-columns: 15% 83%;
         gap: 2%;
-        img{
+
+        img {
             height: 100px;
             width: 100px;
         }
@@ -94,6 +180,6 @@ $text-primary-color: #FF4C29;
         flex-direction: column;
         justify-items: center;
         align-items: center;
-        
+
     }
 }

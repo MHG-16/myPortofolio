@@ -23,7 +23,7 @@ export default function About(dataJson: WordLanguage){
     const numeroPage = useSelector(selectNumeroPageState)
     numeroPage === null ? dispatch(setNumeroPage(1)) : null;
     return (
-        <>
+        <div className={styles.darkMode}>
             <Head>
                 <title>About</title>
             </Head>
@@ -61,7 +61,7 @@ export default function About(dataJson: WordLanguage){
                 </main>
                 <Controlls />
             </div>
-        </>
+        </div>
     )
 }
 

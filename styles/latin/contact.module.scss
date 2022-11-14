@@ -2,9 +2,118 @@ $secondary-color: #2C394B;
 $primary-color: #082032;
 $text-primary-color: #FF4C29;
 $text-secondary-color: #FB2576;
+$primary-color-form-part1: #080808;
+$primary-color-form-part2: #082032;
+$color-inputs: #FFAC41;
+$color-title-form: #FF4C29;
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
-.contactContent {
+.lightMode {
+    $secondary-color: #DFD3C3;
+    $primary-color: #FFF5E4 ;
+    $text-primary-color: #EE6983 !default;
+    $text-secondary-color: #850E35 ;
+    $primary-color-form-part1: #14C38E;
+    $primary-color-form-part2: #00FFAB;
+    $color-title-form: #E3FCBF;
+    $color-inputs: #B8F1B0;
+
+    .contactContent {
+        background-color: $primary-color;
+        font-family: Raleway, sans-serif;
+    }
+
+    .contactContainer {
+        display: grid;
+        grid-template-columns: 30% 50%;
+
+        .rightPartie {
+            margin: 4em;
+            color: $text-primary-color;
+
+            h2 {
+                color: $text-primary-color;
+                font-weight: 600;
+                font-size: x-large;
+            }
+
+            .contactField {
+                margin-top: 1em;
+                margin-left: 1em;
+                font-size: 20px;
+
+                i {
+                    margin-right: 1em;
+                }
+            }
+        }
+
+        .leftPartie {
+            margin: 4em 0;
+            color: $color-title-form;
+
+            h3 {
+                color: $color-title-form;
+            }
+
+            .screen {
+                background: linear-gradient(90deg, $primary-color-form-part1, $primary-color-form-part2);
+                position: relative;
+                padding: 4em;
+                box-shadow: 0px 0px 24px #000;
+                display: grid;
+                grid-template-columns: 17.5% 77.5%;
+                gap: 5%;
+
+                .imageContent {
+                    padding: 7%;
+                    font-size: x-large;
+                    text-align: center;
+                }
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                input {
+                    width: 100%;
+                    margin-bottom: 1em;
+                    padding: 1em;
+                    background-color: $color-inputs;
+                    color: #323232;
+                    font-size: large;
+                    border-radius: 4px;
+                }
+
+                textarea {
+                    width: 100%;
+                    padding: 12px 20px;
+                    box-sizing: border-box;
+                    resize: none;
+                    border-radius: 4px;
+                    background-color: $color-inputs;
+                    color: #323232;
+                    font-size: large;
+                }
+
+                button {
+                    margin-top: 2em;
+                    background-color: $color-inputs;
+                    box-shadow: 0 0 24px rgba(255, 255, 255, .5);
+                    padding: 16px;
+                    border-radius: 1em;
+                    color: #323232;
+                    width: fit-content;
+                }
+            }
+        }
+    }
+}
+
+.darkMode
+{.contactContent {
     background-color: $primary-color;
     font-family: Raleway, sans-serif;
 }
@@ -36,14 +145,14 @@ $text-secondary-color: #FB2576;
 
     .leftPartie {
         margin: 4em 0;
-        color: #FB2576;
+        color: $color-title-form;
 
         h3 {
-            color: $text-primary-color;
+            color: $color-title-form;
         }
 
         .screen {
-            background: linear-gradient(90deg, #000, #2C3333);
+            background: linear-gradient(90deg, $primary-color-form-part1, $primary-color-form-part2);
             position: relative;
             padding: 4em;
             box-shadow: 0px 0px 24px #000;
@@ -67,10 +176,10 @@ $text-secondary-color: #FB2576;
                 width: 100%;
                 margin-bottom: 1em;
                 padding: 1em;
-                background-color: #FFAC41;
+                background-color: $color-inputs;
                 color: #323232;
                 font-size: large;
-                border-radius:4px ;
+                border-radius: 4px;
             }
 
             textarea {
@@ -79,24 +188,24 @@ $text-secondary-color: #FB2576;
                 box-sizing: border-box;
                 resize: none;
                 border-radius: 4px;
-                background-color: #FFAC41;
+                background-color: $color-inputs;
                 color: #323232;
                 font-size: large;
             }
 
-            button{
+            button {
                 margin-top: 2em;
-                background-color:#FFAC41;
-                box-shadow: 0 0 24px rgba(255,255,255,.5);
+                background-color: $color-inputs;
+                box-shadow: 0 0 24px rgba(255, 255, 255, .5);
                 padding: 16px;
-                border-radius: 1em ;
+                border-radius: 1em;
                 color: #323232;
                 width: fit-content;
             }
         }
     }
 }
-
-.recaptcha{
+}
+.recaptcha {
     margin-top: 1em;
 }

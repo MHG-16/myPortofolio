@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
-.container {
+.darkMode .container {
   font-family: "Prompt", sans-serif;
   background-color: #082032;
   margin-top: 10%;
 }
-.container .chars {
-  width: 100%;
+.darkMode .container .chars {
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -13,11 +13,11 @@
   color: #D6C5F0;
   text-align: center;
 }
-.container .chars .itemChar {
+.darkMode .container .chars .itemChar {
   display: grid;
   place-items: center;
 }
-.container .chars .itemChar span {
+.darkMode .container .chars .itemChar span {
   background-color: #5727A3;
   padding: 30px;
   width: 85px;
@@ -26,10 +26,10 @@
   display: grid;
   place-items: center;
 }
-.container .chars .itemChar span i {
+.darkMode .container .chars .itemChar span i {
   font-size: 25px;
 }
-.container .chars .itemChar h3 {
+.darkMode .container .chars .itemChar h3 {
   margin-top: 10px;
   font-size: larger;
   font-weight: 800;
@@ -66,6 +66,75 @@
   height: max-content;
 }
 .nav ul .active {
+  background-color: #A3C7D6;
+  color: #3F3B6C;
+}
+
+.lightMode .container {
+  font-family: "Prompt", sans-serif;
+  background-color: #FFF5E4;
+  margin-top: 10%;
+}
+.lightMode .container .chars {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: space-around;
+  color: #030303;
+  text-align: center;
+}
+.lightMode .container .chars .itemChar {
+  display: grid;
+  place-items: center;
+}
+.lightMode .container .chars .itemChar span {
+  background-color: #92B4EC;
+  padding: 30px;
+  width: 85px;
+  -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  display: grid;
+  place-items: center;
+}
+.lightMode .container .chars .itemChar span i {
+  font-size: 25px;
+}
+.lightMode .container .chars .itemChar h3 {
+  margin-top: 10px;
+  font-size: larger;
+  font-weight: 800;
+}
+.lightMode .workContainer h3 {
+  color: #FF4C29;
+  margin-left: 5%;
+  margin-top: 2em;
+  font-size: x-large;
+  font-weight: bold;
+}
+.lightMode .nav {
+  margin-top: 1em;
+  margin-left: 1em;
+}
+.lightMode .nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  text-align: center;
+  background-color: #92B4EC;
+  width: 80%;
+  color: #030303;
+}
+.lightMode .nav ul li {
+  display: inline;
+  padding: 15px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+.lightMode .nav ul .active {
   background-color: #A3C7D6;
   color: #3F3B6C;
 }

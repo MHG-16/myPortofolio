@@ -10,12 +10,17 @@ import WorkspaceNav from "../../compoments/workspaceNav";
 import path from "path";
 import { parseCookies } from "../../helpers";
 import { GetServerSideProps } from "next";
+import { useDispatch, useSelector } from "react-redux";
+import { selectNumeroPageState, setNumeroPage } from "../../store/page";
 
 export default function WorkSpace({dataJson} : any) {
   const {isOpen, toggle} = useModal();
   const [images, setImages] = useState<any>();
+  const dispatch = useDispatch()
+  const numeroPage = useSelector(selectNumeroPageState)
+  numeroPage === null ? dispatch(setNumeroPage(2)) : null;
   return (
-    <>
+    <div className={styles.darkMode}>
       <Head>
         <title>Workspace</title>
       </Head>
@@ -28,7 +33,7 @@ export default function WorkSpace({dataJson} : any) {
       </div>
       <Controlls />
       {isOpen &&<CustomModal toggle={toggle} isOpen={isOpen} title={images.title} images={images.images}/>}
-    </>
+    </div>
   );
 }
 
