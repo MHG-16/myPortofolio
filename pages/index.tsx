@@ -9,7 +9,7 @@ import styles from "../styles/home.module.css";
 
 const Home: NextPage = () =>   {
     const [langue, setLanguageState] = useState("en");
-    const [, setCookies] = useCookies(["langState"])
+    const [, setCookies] = useCookies(["cookies"])
     const langueActuel = ():string => {
         if (langue === "en") {
             return "English"
@@ -55,8 +55,8 @@ const Home: NextPage = () =>   {
 }
 
 
-function goTohome(langue: string, setCookies: (name: "langState", value: any, options?: CookieSetOptions | undefined) => void) {
-    setCookies("langState", langue, {
+function goTohome(langue: string, setCookies: (name: "cookies", value: any, options?: CookieSetOptions | undefined) => void) {
+    setCookies("cookies", {langue: langue, isDark: true}, {
         path: "/",
         maxAge: 3600, // Expires after 1hr
         sameSite: true,

@@ -8,7 +8,7 @@ import styles from "../styles/langueMenu.module.css";
 
 
 export default function LanguagesMenu() {
-  const [, setCookies] = useCookies(["langState"])
+  const [, setCookies] = useCookies(["cookies"])
   const router = useRouter();
   const options = [
     {value: "en", label: "English"},
@@ -33,9 +33,9 @@ export default function LanguagesMenu() {
   );
 }
 
-function onClick(lang: string, setCookies: (name: "langState", value: any, options?: CookieSetOptions | undefined) => void, router: NextRouter) {
+function onClick(lang: string, setCookies: (name: "cookies", value: any, options?: CookieSetOptions | undefined) => void, router: NextRouter) {
     
-    setCookies("langState", lang, {
+    setCookies("cookies", {langue: lang,  isDark: true}, {
         path: "/",
         maxAge: 7200, // Expires after 2hr
         sameSite: true,
