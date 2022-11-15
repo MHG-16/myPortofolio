@@ -2,12 +2,14 @@ import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
 
 import { numeroPageSlice } from "./page";
+import { themeSlice } from "./theme";
 
 
 export const makeStore = () => configureStore(
     {
         reducer:{
             [numeroPageSlice.name] : numeroPageSlice.reducer,
+            [themeSlice.name] : themeSlice.reducer
         }
     }
 )

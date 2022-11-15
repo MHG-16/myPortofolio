@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import useModal from "../../hooks/ModalHooks";
 import styles from "../../styles/latin/workspace.module.css";
@@ -19,8 +19,15 @@ export default function WorkSpace({dataJson} : any) {
   const dispatch = useDispatch()
   const numeroPage = useSelector(selectNumeroPageState)
   numeroPage === null ? dispatch(setNumeroPage(2)) : null;
+  const [isDark, toggleTheme] = useState(true);
+  useEffect(()=> {
+    let dataDark = true;
+    const root = document.querySelector(":root") as HTMLElement;
+    dataDark = getComputedStyle(root).getPropertyValue('--primary-color').trim() == '#082032';
+    toggleTheme(dataDark);
+  }, [])
   return (
-    <div className={styles.darkMode}>
+    <div className={isDark?styles.darkMode:styles.lightMode}>
       <Head>
         <title>Workspace</title>
       </Head>

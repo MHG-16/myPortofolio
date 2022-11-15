@@ -1,5 +1,17 @@
 .langueNavContainer{
     position: fixed;
     top: 5%;
-    right: 10%;
+    right: 5%;
+    max-width: 20%;
+}
+
+@media screen and (max-width:700px){
+    .langueNavContainer{
+        font-size: small;
+    }
+}
+@media screen and (max-width:400px) {
+    .langueNavContainer{
+        font-size: xx-small;
+    }
 }

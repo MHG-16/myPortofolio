@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import EnPage from '../../compoments/homePAge';
 import { parseCookies } from '../../helpers';
 import { selectNumeroPageState, setNumeroPage } from '../../store/page';
+import { wrapper } from '../../store/store';
+import { setTheme } from '../../store/theme';
 
 
 const Home: NextPage = ({data}: any) => {
@@ -22,7 +24,7 @@ const Home: NextPage = ({data}: any) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async({req, res}:any) =>{
+export const getServerSideProps: GetServerSideProps = wrapper.getServerSideProps((store) => async({req, res}:any) =>{
   const data = parseCookies(req)
   if (res) {
       if (Object.keys(data).length === 0 && data.constructor === Object) {
@@ -32,6 +34,7 @@ export const getServerSideProps: GetServerSideProps = async({req, res}:any) =>{
   }
   const languageState = JSON.parse(data.cookies)
   const pathFile = path.join("/locales/"+ "" + languageState.langue, "common.json");
+  store.dispatch(setTheme(languageState.isDark))
   let dataJson = {};
   await fetch("http://localhost:3000" + pathFile)
         .then(res =>  res.json())
@@ -43,7 +46,7 @@ export const getServerSideProps: GetServerSideProps = async({req, res}:any) =>{
       data:dataJson,
     },
   };
-};
+});
 
 
 

@@ -44,6 +44,7 @@
   color: #FF4C29;
 }
 .darkMode .skills ul {
+  width: 70%;
   margin: 1rem;
 }
 .darkMode .skills ul li {
@@ -107,6 +108,7 @@
   color: #EE6983;
 }
 .lightMode .skills ul {
+  width: 70%;
   margin: 1rem;
 }
 .lightMode .skills ul li {

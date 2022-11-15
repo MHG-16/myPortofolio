@@ -23,7 +23,7 @@ export default function LanguagesMenu() {
       <Select
         value={stateSelected}
         components={animatedComponents}
-        placeholder="choose other language"
+        placeholder="choose ..."
         options={options} 
         styles={customStyles}
         theme={customtheme}

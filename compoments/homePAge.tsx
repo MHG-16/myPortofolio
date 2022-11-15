@@ -11,15 +11,21 @@ import {
 
 import styles from "../styles/latin/darkmode.module.css";
 import Controlls from "./controlls";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { WordLanguage } from "../types/globalsType";
 import LanguagesMenu from "./langueMenu";
 
 export default function EnPage(dataJson: WordLanguage) {
+  const [isDark, toggleTheme] = useState(true);
+  useEffect(()=> {
+    let dataDark = true;
+    const root = document.querySelector(":root") as HTMLElement;
+    dataDark = getComputedStyle(root).getPropertyValue('--primary-color').trim() == '#082032';
+    toggleTheme(dataDark);
+  }, [])
   return (
-    <div className={styles.darkMode}>
+    <div className={isDark?styles.darkMode:styles.lightMode}>
       <div className={styles.mainContent}>
-        <LanguagesMenu />
         <div className={styles.headerContent}>
           <div className={styles.leftHeader}>
             <Image
@@ -109,6 +115,7 @@ export default function EnPage(dataJson: WordLanguage) {
           </i>
         </div>
         <Controlls />
+        <LanguagesMenu />
       </div>
     </div>
   );

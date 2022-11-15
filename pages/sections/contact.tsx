@@ -5,19 +5,25 @@ import  ReCAPTCHA  from "react-google-recaptcha";
 
 import styles from "../../styles/latin/contact.module.css";
 import Controlls from "../../compoments/controlls";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { selectNumeroPageState, setNumeroPage } from "../../store/page";
 import { useDispatch, useSelector } from "react-redux";
 import Head from 'next/head';
 
 export default function Contact() {
-  const [verified, setverified] = useState(false);
   const dispatch = useDispatch()
   const numeroPage = useSelector(selectNumeroPageState)
   numeroPage === null ? dispatch(setNumeroPage(3)) : null;
   const captchaRef = useRef(null)
+  const [isDark, toggleTheme] = useState(true);
+  useEffect(()=> {
+    let dataDark = true;
+    const root = document.querySelector(":root") as HTMLElement;
+    dataDark = getComputedStyle(root).getPropertyValue('--primary-color').trim() == '#082032';
+    toggleTheme(dataDark);
+  }, [])
   return (
-    <div className={styles.darkMode}>
+    <div className={isDark?styles.darkMode:styles.lightMode}>
       <Head>
         <title>Contact</title>
       </Head>

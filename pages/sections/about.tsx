@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Controlls from "../../compoments/controlls";
 import styles from "../../styles/latin/about.module.css";
@@ -22,8 +22,15 @@ export default function About(dataJson: WordLanguage){
     const dispatch = useDispatch()
     const numeroPage = useSelector(selectNumeroPageState)
     numeroPage === null ? dispatch(setNumeroPage(1)) : null;
-    return (
-        <div className={styles.darkMode}>
+    const [isDark, toggleTheme] = useState(true);
+    useEffect(()=> {
+    let dataDark = true;
+    const root = document.querySelector(":root") as HTMLElement;
+    dataDark = getComputedStyle(root).getPropertyValue('--primary-color').trim() == '#082032';
+    toggleTheme(dataDark);
+    }, [])
+  return (
+    <div className={isDark?styles.darkMode:styles.lightMode}>
             <Head>
                 <title>About</title>
             </Head>

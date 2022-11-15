@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { selectNumeroPageState, setNumeroPage } from "../store/page";
@@ -17,16 +17,24 @@ import styles2 from "../styles/latin/darkmode.module.css";
 import styles3 from "../styles/latin/about.module.css";
 import styles4 from "../styles/latin/workspace.module.css";
 import styles5 from "../styles/latin/contact.module.css";
+import { AnyAction } from "@reduxjs/toolkit";
 
 export default function Controlls() {
   const numeroPage = useSelector(selectNumeroPageState);
   const dispatch = useDispatch();
   const router = useRouter();
-  const [isDark, toggleTheme] = useState(true)
+  const [isDark, toggleTheme] = useState(true);
+  useEffect(()=> {
+    let dataDark = true;
+    const root = document.querySelector(":root") as HTMLElement;
+    dataDark = getComputedStyle(root).getPropertyValue('--primary-color').trim() == '#082032';
+    toggleTheme(dataDark);
+  }, [])
+  
   return (
-    <div className={styles.darkMode}>
+    <div className={isDark?styles.darkMode: styles.lightMode}>
       <div className={styles.controlls}>
-        <div className={styles.themeButton} onClick={() => changeTheme(numeroPage,isDark, toggleTheme)}>
+        <div className={styles.themeButton} onClick={() => {changeTheme(numeroPage, dispatch ); toggleTheme(!isDark)}}>
           <i className={styles.icons}>
             <FontAwesomeIcon  style={{display: isDark?"none":""}} icon={faCloudSun}/>
             <FontAwesomeIcon  style={{display: !isDark?"none":""}} icon={faMoon}/>
@@ -85,19 +93,19 @@ export default function Controlls() {
     </div>
   );
 }
-
-function changeTheme(numeroPage:number|null,isDark: boolean,toggleTheme : React.Dispatch<React.SetStateAction<boolean>>){
-  if(isDark){
-    changeToLightMode(numeroPage)
+ 
+function changeTheme(numeroPage:number|null, dispatch: React.Dispatch<AnyAction>){
+  const root = document.querySelector(":root") as HTMLElement;
+  if(getComputedStyle(root).getPropertyValue('--primary-color').trim() == '#082032'){
+    changeToLightMode(numeroPage, dispatch);
   }
   else {
-    changeToDarkMode(numeroPage)
+    changeToDarkMode(numeroPage,dispatch)
   }
-  toggleTheme(!isDark)
 }
 
 
-function changeToDarkMode(numeroPage: number|null){
+function changeToDarkMode(numeroPage: number|null, dispatch: React.Dispatch<AnyAction>){
   const ParentDivOfControlls = document.querySelector(`.${styles.lightMode}`) as HTMLDivElement;
   let root = document.querySelector(":root") as HTMLElement;
   ParentDivOfControlls.className = `${styles.darkMode}`;
@@ -120,7 +128,7 @@ function changeToDarkMode(numeroPage: number|null){
   }
 }
 
-function changeToLightMode(numeroPage: number|null){
+function changeToLightMode(numeroPage: number|null, dispatch: React.Dispatch<AnyAction>){
   const ParentDivOfControlls = document.querySelector(`.${styles.darkMode}`) as HTMLDivElement;
   let root = document.querySelector(":root") as HTMLElement;
   ParentDivOfControlls.className = `${styles.lightMode}`;
@@ -142,3 +150,4 @@ function changeToLightMode(numeroPage: number|null){
     ParentDiv.className = `${styles5.lightMode}`
   }
 }
+
