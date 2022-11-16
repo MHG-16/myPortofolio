@@ -168,38 +168,59 @@
 }
 
 @media screen and (max-width: 1659px) {
-  .darkMode .contactContainer, .lightMode .contactContainer {
+  .darkMode .contactContainer,
+.lightMode .contactContainer {
     display: block;
   }
-  .darkMode .contactContainer .leftPartie, .lightMode .contactContainer .leftPartie {
+  .darkMode .contactContainer .leftPartie,
+.lightMode .contactContainer .leftPartie {
     width: 80%;
     margin-left: 4em;
   }
 }
 @media screen and (max-width: 1100px) {
-  .darkMode .contactContainer .leftPartie h3, .lightMode .contactContainer .leftPartie h3 {
+  .darkMode .contactContainer .leftPartie h3,
+.lightMode .contactContainer .leftPartie h3 {
     font-size: medium;
   }
 }
 @media screen and (max-width: 989px) {
-  .darkMode .contactContainer .leftPartie, .lightMode .contactContainer .leftPartie {
+  .darkMode .contactContainer .leftPartie,
+.lightMode .contactContainer .leftPartie {
     margin-left: 2em;
   }
-  .darkMode .contactContainer .leftPartie h3, .lightMode .contactContainer .leftPartie h3 {
+  .darkMode .contactContainer .leftPartie h3,
+.lightMode .contactContainer .leftPartie h3 {
     font-size: small;
   }
 }
 @media screen and (max-width: 650px) {
-  .darkMode .contactContainer .leftPartie, .lightMode .contactContainer .leftPartie {
+  .darkMode .contactContainer .leftPartie,
+.lightMode .contactContainer .leftPartie {
     width: 70%;
   }
-  .darkMode .contactContainer .leftPartie .screen, .lightMode .contactContainer .leftPartie .screen {
+  .darkMode .contactContainer .leftPartie .screen,
+.lightMode .contactContainer .leftPartie .screen {
     display: block;
     padding: 2em;
   }
+  .darkMode .contactContainer .rightPartie,
+.lightMode .contactContainer .rightPartie {
+    margin: 2em;
+  }
+  .darkMode .contactContainer .rightPartie .contactField,
+.lightMode .contactContainer .rightPartie .contactField {
+    font-size: medium;
+  }
 }
 @media screen and (max-width: 400px) {
-  .darkMode .contactContainer .leftPart .screen, .lightMode .contactContainer .leftPart .screen {
+  .darkMode .contactContainer .leftPartie .screen,
+.lightMode .contactContainer .leftPartie .screen {
     padding: 1em;
+  }
+  .darkMode .contactContainer .rightPartie,
+.lightMode .contactContainer .rightPartie {
+    font-size: x-small;
+    width: 60%;
   }
 }/*# sourceMappingURL=contact.module.css.map */

@@ -10,9 +10,9 @@ $color-title-form: #FF4C29;
 
 .lightMode {
     $secondary-color: #DFD3C3;
-    $primary-color: #FFF5E4 ;
+    $primary-color: #FFF5E4;
     $text-primary-color: #EE6983 !default;
-    $text-secondary-color: #850E35 ;
+    $text-secondary-color: #850E35;
     $primary-color-form-part1: #14C38E;
     $primary-color-form-part2: #00FFAB;
     $color-title-form: #E3FCBF;
@@ -112,110 +112,113 @@ $color-title-form: #FF4C29;
     }
 }
 
-.darkMode
-{.contactContent {
-    background-color: $primary-color;
-    font-family: Raleway, sans-serif;
-}
-
-.contactContainer {
-    display: grid;
-    grid-template-columns: 30% 50%;
-
-    .rightPartie {
-        margin: 4em;
-        color: aliceblue;
-
-        h2 {
-            color: $text-primary-color;
-            font-weight: 600;
-            font-size: x-large;
-        }
-
-        .contactField {
-            margin-top: 1em;
-            margin-left: 1em;
-            font-size: 20px;
-
-            i {
-                margin-right: 1em;
-            }
-        }
+.darkMode {
+    .contactContent {
+        background-color: $primary-color;
+        font-family: Raleway, sans-serif;
     }
 
-    .leftPartie {
-        margin: 4em 0;
-        color: $color-title-form;
+    .contactContainer {
+        display: grid;
+        grid-template-columns: 30% 50%;
 
-        h3 {
-            color: $color-title-form;
-        }
+        .rightPartie {
+            margin: 4em;
+            color: aliceblue;
 
-        .screen {
-            background: linear-gradient(90deg, $primary-color-form-part1, $primary-color-form-part2);
-            position: relative;
-            padding: 4em;
-            box-shadow: 0px 0px 24px #000;
-            display: grid;
-            grid-template-columns: 17.5% 77.5%;
-            gap: 5%;
-
-            .imageContent {
-                padding: 7%;
+            h2 {
+                color: $text-primary-color;
+                font-weight: 600;
                 font-size: x-large;
-                text-align: center;
+            }
+
+            .contactField {
+                margin-top: 1em;
+                margin-left: 1em;
+                font-size: 20px;
+
+                i {
+                    margin-right: 1em;
+                }
             }
         }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .leftPartie {
+            margin: 4em 0;
+            color: $color-title-form;
 
-            input {
-                width: 100%;
-                margin-bottom: 1em;
-                padding: 1em;
-                background-color: $color-inputs;
-                color: #323232;
-                font-size: large;
-                border-radius: 4px;
+            h3 {
+                color: $color-title-form;
             }
 
-            textarea {
-                width: 100%;
-                padding: 12px 20px;
-                box-sizing: border-box;
-                resize: none;
-                border-radius: 4px;
-                background-color: $color-inputs;
-                color: #323232;
-                font-size: large;
+            .screen {
+                background: linear-gradient(90deg, $primary-color-form-part1, $primary-color-form-part2);
+                position: relative;
+                padding: 4em;
+                box-shadow: 0px 0px 24px #000;
+                display: grid;
+                grid-template-columns: 17.5% 77.5%;
+                gap: 5%;
+
+                .imageContent {
+                    padding: 7%;
+                    font-size: x-large;
+                    text-align: center;
+                }
             }
 
-            button {
-                margin-top: 2em;
-                background-color: $color-inputs;
-                box-shadow: 0 0 24px rgba(255, 255, 255, .5);
-                padding: 16px;
-                border-radius: 1em;
-                color: #323232;
-                width: fit-content;
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                input {
+                    width: 100%;
+                    margin-bottom: 1em;
+                    padding: 1em;
+                    background-color: $color-inputs;
+                    color: #323232;
+                    font-size: large;
+                    border-radius: 4px;
+                }
+
+                textarea {
+                    width: 100%;
+                    padding: 12px 20px;
+                    box-sizing: border-box;
+                    resize: none;
+                    border-radius: 4px;
+                    background-color: $color-inputs;
+                    color: #323232;
+                    font-size: large;
+                }
+
+                button {
+                    margin-top: 2em;
+                    background-color: $color-inputs;
+                    box-shadow: 0 0 24px rgba(255, 255, 255, .5);
+                    padding: 16px;
+                    border-radius: 1em;
+                    color: #323232;
+                    width: fit-content;
+                }
             }
         }
     }
 }
-}
+
 .recaptcha {
     margin-top: 1em;
 }
 
 @media screen and (max-width: 1659px) {
-    .darkMode, .lightMode
-    { 
-        .contactContainer{
+
+    .darkMode,
+    .lightMode {
+        .contactContainer {
             display: block;
-            .leftPartie{
+
+            .leftPartie {
                 width: 80%;
                 margin-left: 4em;
             }
@@ -224,39 +227,67 @@ $color-title-form: #FF4C29;
 }
 
 @media screen and (max-width:1100px) {
-    .darkMode, .lightMode{
-        .contactContainer .leftPartie h3{
+
+    .darkMode,
+    .lightMode {
+        .contactContainer .leftPartie h3 {
             font-size: medium;
         }
     }
 }
 
 @media screen and (max-width:989px) {
-    .darkMode, .lightMode{
-        .contactContainer .leftPartie{
+
+    .darkMode,
+    .lightMode {
+        .contactContainer .leftPartie {
             margin-left: 2em;
-            h3{
-            font-size: small;}
+
+            h3 {
+                font-size: small;
+            }
         }
     }
 }
 
 @media screen and (max-width:650px) {
-    .darkMode, .lightMode{
-        .contactContainer .leftPartie {
-            width: 70%;
-            .screen{
-            display: block;
-            padding: 2em;
+
+    .darkMode,
+    .lightMode {
+        .contactContainer {
+            .leftPartie {
+                width: 70%;
+
+                .screen {
+                    display: block;
+                    padding: 2em;
+                }
+            }
+
+            .rightPartie {
+                margin: 2em;
+
+                .contactField {
+                    font-size: medium;
+                }
+            }
         }
-    }
     }
 }
 
 @media screen and (max-width:400px) {
-    .darkMode, .lightMode{
-        .contactContainer .leftPart .screen{
-            padding: 1em;
+
+    .darkMode,
+    .lightMode {
+        .contactContainer {
+            .leftPartie .screen {
+                    padding: 1em;
+            }
+
+            .rightPartie {
+                font-size: x-small;
+                width: 60%;
+            }
         }
     }
 }
