@@ -24,26 +24,25 @@
   margin: 1em 0;
 }
 .lightMode .mainContainer div {
-  display: grid;
+  display: flex;
   place-items: center;
   padding: 1% 1% 1% 1%;
-  grid-template-columns: 2% 25% 25% 25% 2%;
   width: 90%;
-  gap: 5%;
   background-color: #28DF99;
   margin-top: 1em;
 }
-.lightMode .mainContainer div div {
+.lightMode .mainContainer div .CardItem__000, .lightMode .mainContainer div .CardItem__001, .lightMode .mainContainer div .CardItem__002 {
   display: block;
   text-align: center;
   background-color: #99F3BD;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   padding: 1em;
+  margin: 0 5px;
   animation: slideIn 1s forwards;
   -webkit-animation: slideIn 1s forwards;
   -moz-animation: slideIn 1s forwards;
 }
-.lightMode .mainContainer div div h3 {
+.lightMode .mainContainer div .CardItem__000 h3, .lightMode .mainContainer div .CardItem__001 h3, .lightMode .mainContainer div .CardItem__002 h3 {
   font-size: large;
   margin-top: 1em;
   font-weight: 600;
@@ -85,16 +84,14 @@
   margin: 1em 0;
 }
 .darkMode .mainContainer div {
-  display: grid;
+  display: flex;
   place-items: center;
   padding: 1% 1% 1% 1%;
-  grid-template-columns: 2% 25% 25% 25% 2%;
   width: 90%;
-  gap: 5%;
   background-color: #916BBF;
   margin-top: 1em;
 }
-.darkMode .mainContainer div div {
+.darkMode .mainContainer div .CardItem__000, .darkMode .mainContainer div .CardItem__001, .darkMode .mainContainer div .CardItem__002 {
   display: block;
   text-align: center;
   background-color: #3D2C8D;
@@ -104,7 +101,7 @@
   -webkit-animation: slideIn 1s forwards;
   -moz-animation: slideIn 1s forwards;
 }
-.darkMode .mainContainer div div h3 {
+.darkMode .mainContainer div .CardItem__000 h3, .darkMode .mainContainer div .CardItem__001 h3, .darkMode .mainContainer div .CardItem__002 h3 {
   font-size: large;
   margin-top: 1em;
   font-weight: 600;
@@ -134,5 +131,28 @@
   }
   100% {
     transform: translateX(0%);
+  }
+}
+@media screen and (max-width: 1099px) {
+  .darkMode .mainContainer div .CardItem__002, .lightMode .mainContainer div .CardItem__002 {
+    display: none;
+  }
+}
+@media screen and (max-width: 799px) {
+  .darkMode .mainContainer div .CardItem__001, .lightMode .mainContainer div .CardItem__001 {
+    display: none;
+  }
+}
+@media screen and (max-width: 499px) {
+  .darkMode .mainContainer div button, .lightMode .mainContainer div button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    text-align: center;
+    font-size: 16px;
+  }
+  .darkMode .mainContainer, .lightMode .mainContainer {
+    margin-left: 2em;
+    width: 80%;
   }
 }/*# sourceMappingURL=about.module.css.map */

@@ -17,7 +17,6 @@ $text-secondary-color: #FB2576;
 
     .mainContainer {
         margin: 4em;
-
         h2 {
             color: $text-primary-color;
             font-size: x-large;
@@ -42,22 +41,21 @@ $text-secondary-color: #FB2576;
 
         div {
             $background-scroll: #28DF99;
-            display: grid;
+            display: flex;
             place-items: center;
             padding: 1% 1% 1% 1%;
-            grid-template-columns: 2% 25% 25% 25% 2%;
             width: 90%;
-            gap: 5%;
             background-color: $background-scroll;
             margin-top: 1em;
 
-            div {
+            .CardItem__000, .CardItem__001, .CardItem__002 {
                 $backgroundColorItem: #99F3BD;
                 display: block;
                 text-align: center;
                 background-color: $backgroundColorItem;
                 box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
                 padding: 1em;
+                margin:0 5px;
                 animation: slideIn 1s forwards;
                 -webkit-animation: slideIn 1s forwards;
                 -moz-animation: slideIn 1s forwards;
@@ -115,16 +113,14 @@ $text-secondary-color: #FB2576;
         }
 
         div {
-            display: grid;
+            display: flex;
             place-items: center;
             padding: 1% 1% 1% 1%;
-            grid-template-columns: 2% 25% 25% 25% 2%;
             width: 90%;
-            gap: 5%;
             background-color: #916BBF;
             margin-top: 1em;
 
-            div {
+            .CardItem__000, .CardItem__001, .CardItem__002 {
                 display: block;
                 text-align: center;
                 background-color: #3D2C8D;
@@ -184,4 +180,34 @@ $text-secondary-color: #FB2576;
 
         transform: translateX(0%);
     }
+}
+@media screen and (max-width: 1099px) {
+    .darkMode, .lightMode {
+        .mainContainer div .CardItem__002 {
+        display: none;}
+    }
+}
+
+@media screen and (max-width:799px) {
+    .darkMode, .lightMode {
+        .mainContainer div .CardItem__001 {
+        display: none;}
+    }
+}
+
+@media screen and (max-width:499px) {
+    .darkMode, .lightMode{
+        .mainContainer div button {
+            width: 30px;
+            height: 30px;
+            padding:0;
+            text-align: center;
+            font-size: 16px;
+        }
+        .mainContainer {
+            margin-left: 2em;
+            width: 80%;
+        }
+    }
+
 }

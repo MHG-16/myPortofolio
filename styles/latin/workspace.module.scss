@@ -65,8 +65,8 @@ $text-trio-color: #D6C5F0;
         list-style-type: none;
         margin: 0;
         padding: 0;
-        display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
+        display: flex;
+        justify-content: space-between;
         text-align: center;
         background-color: $trio-color;
         width: 80%;
@@ -74,6 +74,7 @@ $text-trio-color: #D6C5F0;
         color: $text-trio-color;
 
         li {
+            width: 25%;
             display: inline;
             padding: 15px;
             height: max-content;
@@ -155,8 +156,8 @@ $text-trio-color: #D6C5F0;
             list-style-type: none;
             margin: 0;
             padding: 0;
-            display: grid;
-            grid-template-columns: 25% 25% 25% 25%;
+            display: flex;
+            justify-content: space-between;
             text-align: center;
             background-color: $trio-color;
             width: 80%;
@@ -164,6 +165,7 @@ $text-trio-color: #D6C5F0;
             color: $text-trio-color;
 
             li {
+                width: 25%;
                 display: inline;
                 padding: 15px;
                 height: max-content;
@@ -192,7 +194,7 @@ $text-trio-color: #D6C5F0;
 }
 
 @media screen and (max-width:850px) {
-    .container {
+    .darkMode .container {
         .chars {
             .itemChar {
                 span {
@@ -205,15 +207,22 @@ $text-trio-color: #D6C5F0;
 
 }
 
+@media screen and (max-width:750px) {
+    .darkMode , .lightMode {
+        .container .chars{
+            display: block;
+            .itemChar{
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width:680px) {
-    .container {
+    .darkMode,.lightMode{ .container {
         padding: 0% 15% 0 0;
 
-        .chars {
-            grid-template-columns: 30% 30%;
-            gap: 10%;
-            margin-right: 20%;
-        }
+    }
     }
 }
 
@@ -224,44 +233,11 @@ $text-trio-color: #D6C5F0;
 
 }
 
-@media screen and (max-width:450px) {
-    .container .chars {
-        grid-template-columns: 25% 25%;
-    }
-
-    .nav ul li {
-        grid-template-columns: 33% 33% 33%;
-        padding: 5px;
-    }
-
-}
 
 @media screen and (max-width:400px) {
-    .container .chars {
-        padding-top: 15%;
-        grid-template-columns: 70%;
-        margin-right: 5%;
-
-        p {
-            width: 70%;
-        }
-    }
-
-    .workContainer h3 {
+    .darkMode ,.lightMode{.workContainer h3 {
         margin-top: 3em;
-    }
-
-    .nav {
-        ul {
-            grid-template-columns: 33% 33% 33%;
-            width: 90%;
-
-            li {
-                padding: 5px;
-            }
-        }
-
-    }
+    }}
 }
 
 .allSection {

@@ -10,7 +10,6 @@ import { selectNumeroPageState, setNumeroPage } from "../../store/page";
 import { useDispatch, useSelector } from "react-redux";
 import Head from "next/head";
 import path from "path";
-import { wrapper } from "../../store/store";
 import { WordLanguage } from "../../types/globalsType";
 import { GetServerSideProps } from "next";
 import { parseCookies } from "../../helpers";
@@ -48,12 +47,12 @@ export default function About(dataJson: WordLanguage){
                         </li>
                     </ul>
                     <h2>{dataJson.about.certificatesTitle}</h2>
-                    <div>
+                    <div >
                         <button className={styles.btns}
                         onClick={() => imageActuel!==1? setNumeroImage(0):setNumeroImage(imageActuel-1)}>
                             <i><FontAwesomeIcon icon={faArrowLeft}/></i></button>
                         {certificates.map((certif, index) => 
-                        <div key={"img"+index} hidden={!(index< imageActuel+3 && index>= imageActuel)} className={styles.cardImage}>
+                        <div key={"img"+index} hidden={!(index< imageActuel+3 && index>= imageActuel)} className={styles["CardItem__00"+(index-imageActuel)]}>
                             <Image 
                                 src={certif.image_url}
                                 alt={certif.image_alt}

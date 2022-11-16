@@ -126,20 +126,45 @@
 }
 
 @media screen and (max-width: 750px) {
-  .headerContent {
+  .darkMode .headerContent,
+.lightMode .headerContent {
     grid-template-columns: 15% 83%;
     gap: 2%;
   }
-  .headerContent img {
+  .darkMode .headerContent img,
+.lightMode .headerContent img {
     height: 100px;
     width: 100px;
   }
+  .darkMode .logos,
+.lightMode .logos {
+    width: 75%;
+  }
 }
 @media screen and (max-width: 650px) {
-  .headerContent {
+  .darkMode .headerContent, .lightMode .headerContent {
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
+    width: 75%;
+  }
+  .logos {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1600px) and (min-width: 768px) {
+  .darkMode .logos,
+.lightMode .logos {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .darkMode .logos, .lightMode .logos {
+    width: 90%;
+    margin-left: 1em;
+  }
+  .darkMode .logos i, .lightMode .logos i {
+    font-size: x-large;
   }
 }/*# sourceMappingURL=darkmode.module.css.map */

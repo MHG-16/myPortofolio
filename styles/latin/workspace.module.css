@@ -51,14 +51,15 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  display: flex;
+  justify-content: space-between;
   text-align: center;
   background-color: #5727A3;
   width: 80%;
   color: #D6C5F0;
 }
 .nav ul li {
+  width: 25%;
   display: inline;
   padding: 15px;
   height: -webkit-max-content;
@@ -120,14 +121,15 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  display: flex;
+  justify-content: space-between;
   text-align: center;
   background-color: #92B4EC;
   width: 80%;
   color: #030303;
 }
 .lightMode .nav ul li {
+  width: 25%;
   display: inline;
   padding: 15px;
   height: -webkit-max-content;
@@ -152,19 +154,22 @@
   }
 }
 @media screen and (max-width: 850px) {
-  .container .chars .itemChar span {
+  .darkMode .container .chars .itemChar span {
     padding: 10px;
     width: 45px;
   }
 }
-@media screen and (max-width: 680px) {
-  .container {
-    padding: 0% 15% 0 0;
+@media screen and (max-width: 750px) {
+  .darkMode .container .chars, .lightMode .container .chars {
+    display: block;
   }
-  .container .chars {
-    grid-template-columns: 30% 30%;
-    gap: 10%;
-    margin-right: 20%;
+  .darkMode .container .chars .itemChar, .lightMode .container .chars .itemChar {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 680px) {
+  .darkMode .container, .lightMode .container {
+    padding: 0% 15% 0 0;
   }
 }
 @media screen and (max-width: 500px) {
@@ -172,33 +177,9 @@
     padding: 0% 15% 0 0;
   }
 }
-@media screen and (max-width: 450px) {
-  .container .chars {
-    grid-template-columns: 25% 25%;
-  }
-  .nav ul li {
-    grid-template-columns: 33% 33% 33%;
-    padding: 5px;
-  }
-}
 @media screen and (max-width: 400px) {
-  .container .chars {
-    padding-top: 15%;
-    grid-template-columns: 70%;
-    margin-right: 5%;
-  }
-  .container .chars p {
-    width: 70%;
-  }
-  .workContainer h3 {
+  .darkMode .workContainer h3, .lightMode .workContainer h3 {
     margin-top: 3em;
-  }
-  .nav ul {
-    grid-template-columns: 33% 33% 33%;
-    width: 90%;
-  }
-  .nav ul li {
-    padding: 5px;
   }
 }
 .allSection {
