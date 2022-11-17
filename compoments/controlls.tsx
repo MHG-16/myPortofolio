@@ -45,7 +45,7 @@ export default function Controlls() {
           onClick={() => {
             setTimeout(() => {
               dispatch(setNumeroPage(0));
-            }, 250);
+            }, 0);
             router.push("/sections/");
           }}
         >
@@ -56,7 +56,7 @@ export default function Controlls() {
         <div
           style={{ backgroundPosition: numeroPage === 1 ? "left" : "right" }}
           onClick={() => {
-            setTimeout(() => dispatch(setNumeroPage(1)), 250);
+            setTimeout(() => dispatch(setNumeroPage(1)), 0);
             router.push("/sections/about/");
           }}
         >
@@ -68,7 +68,7 @@ export default function Controlls() {
           className={styles.icons}
           style={{ backgroundPosition: numeroPage === 2 ? "left" : "right" }}
           onClick={() => {
-            setTimeout(() => dispatch(setNumeroPage(2)), 250);
+            setTimeout(() => dispatch(setNumeroPage(2)), 0);
             router.push("/sections/workspace");
           }}
         >
@@ -80,7 +80,7 @@ export default function Controlls() {
         <div
           style={{ backgroundPosition: numeroPage === 3 ? "left" : "right" }}
           onClick={() => {
-            setTimeout(() => dispatch(setNumeroPage(3)), 250);
+            setTimeout(() => dispatch(setNumeroPage(3)), 0);
             router.push("/sections/contact");
           }}
           data-id="contact"
