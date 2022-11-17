@@ -82,7 +82,7 @@ export const getServerSideProps: GetServerSideProps = async({req, res}:any) =>{
     const languageState = JSON.parse(data.cookies)
     let dataJson ={}
     const pathFile = path.join("/locales/"+ "" + languageState.langue, "common.json");
-    await fetch("http://localhost:3000" + pathFile)
+    await fetch(process.env.nomDomaine + pathFile)
           .then(res =>  res.json())
           .then(json => {dataJson = json; console.log(pathFile)})
           .finally(() => console.log("ok"))
