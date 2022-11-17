@@ -16,4 +16,10 @@
   height: 70%;
   padding: 1rem;
   border-radius: 1rem;
+}
+
+@media screen and (max-width: 589px) {
+  .modalBox {
+    width: 100%;
+  }
 }/*# sourceMappingURL=modal.module.css.map */
