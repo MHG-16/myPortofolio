@@ -36,7 +36,7 @@ export const getServerSideProps: GetServerSideProps = wrapper.getServerSideProps
   const pathFile = path.join("/locales/"+ "" + languageState.langue, "common.json");
   store.dispatch(setTheme(languageState.isDark))
   let dataJson = {};
-  await fetch("http://localhost:3000" + pathFile)
+  await fetch(process.env.nomDomaine + pathFile)
         .then(res =>  res.json())
         .then(json => {dataJson = json; console.log(dataJson)})
         .finally(() => console.log("ok"))
