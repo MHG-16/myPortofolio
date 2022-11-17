@@ -1,9 +1,5 @@
 import { faGaugeHigh, faMobileScreen, faRocket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import path from "path";
-import { useState } from "react";
-import { useSelector } from "react-redux";
-import { selectLanguageState } from "../store/language";
 
 import styles from "../styles/latin/workspace.module.css";
 import { WordLanguage } from "../types/globalsType";

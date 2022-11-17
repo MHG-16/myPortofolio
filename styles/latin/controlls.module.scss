@@ -10,7 +10,7 @@ $text-primary-color: #7579E7;
     .themeButton {
         position: fixed;
         right: 5%;
-        top: 10%;
+        top: 15%;
         width: 80px;
         height: 80px;
         background: linear-gradient(to right, black 50%, $secondary-color 50%);
@@ -67,7 +67,7 @@ $text-primary-color: #7579E7;
         .themeButton {
             position: fixed;
             right: 5%;
-            top: 10%;
+            top: 14%;
             width: 80px;
             height: 80px;
             background: $text-primary-color;
@@ -99,7 +99,7 @@ $text-primary-color: #7579E7;
             border-radius: 50%;
             margin-bottom: 1rem;
             color: white;
-            box-shadow: #082032 4px 2px 12px 6px ;
+            box-shadow: #082032 4px 2px 12px 6px;
 
             i {
                 font-size: 30px;
@@ -119,5 +119,46 @@ $text-primary-color: #7579E7;
         background-size: 200% 100%;
         transition: all .75s ease-out;
         color: #AAC4FF;
+    }
+}
+
+@media screen and (max-width: 578px) {
+
+    .darkMode,
+    .lightMode {
+        .controlls {
+            .themeButton {
+                position: fixed;
+                right: 5%;
+                top: 20%;
+                width: 50px;
+                height: 50px;
+                padding: 10px;
+
+                i {
+                    font-size: 20px;
+                }
+            }
+            div {
+                width: 50px;
+                height: 50px;
+                padding: 10px;
+
+                i {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 359px) {
+    .darkMode, .lightMode {
+        .controlls{
+            right: 2.5%;
+            .themeButton {
+                right: 2.5%;
+            }
+        }
     }
 }

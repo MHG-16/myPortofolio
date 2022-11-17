@@ -2,6 +2,7 @@
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { Box, Image } from "@chakra-ui/react";
 import styles from "../styles/ListImage.module.css";
 
 export default function ListImage( props: propsType){
@@ -9,8 +10,8 @@ export default function ListImage( props: propsType){
     const NUMBEROFIMAGE = props.imageData.length;
     const imgs = props.imageData.map((image, index) => {
     return (<div key={index} className={styles.ImageContainer}>
-        <div className={styles.imageItem}>
-            {imageActuel === index && <img src={image.img_url} alt={image.img_alt} className={styles.images}/>}
+        <div className={styles.imageItem} >
+            {imageActuel === index && <Box boxSize={"auto"}><Image src={image.img_url} alt={image.img_alt} className={styles.images} width={"70%"} height={"90%"} /></Box>}
         </div>
     </div>)
     }
