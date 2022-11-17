@@ -5,13 +5,17 @@ import useModal from "../hooks/ModalHooks";
 
 export default function ListCards(props: ListCardsProps){
     return (
-        props.data.map((obj, index) => 
-        <span key={"img" + index} onClick={() => {props.toggle(); props.setImages({title: obj.name, images: obj.imgs})}}>
+        <>
+        {props.data.map((obj, index) => 
+            <span key={"img" + index} onClick={() => {props.toggle(); props.setImages({title: obj.name, images: obj.imgs})}}>
                   <img
                     src={obj.img_haupt.img_url}
                     alt={obj.img_haupt.img_alt}
                   />
-        </span>)
+            </span>
+        )
+        }
+        </>
     )
 }
 
