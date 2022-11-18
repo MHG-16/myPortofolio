@@ -253,3 +253,9 @@ $text-trio-color: #D6C5F0;
         border: 2px solid $trio-color;
     }
 }
+
+@media screen and (max-width:750px) {
+    .allSection{
+        display: block;
+    }
+}
