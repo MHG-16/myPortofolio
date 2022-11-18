@@ -22,4 +22,7 @@
   .modalBox {
     width: 100%;
   }
+  .modal_overlay {
+    width: 90%;
+  }
 }/*# sourceMappingURL=modal.module.css.map */
