@@ -192,11 +192,13 @@
 .allSection span {
   margin-bottom: 1em;
   border-radius: 1em;
-  border: 2px solid #5727A3;
 }
 
 @media screen and (max-width: 750px) {
   .allSection {
     display: block;
+  }
+  .allSection span img {
+    margin-bottom: 1em;
   }
 }/*# sourceMappingURL=workspace.module.css.map */

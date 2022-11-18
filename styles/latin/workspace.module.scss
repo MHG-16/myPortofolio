@@ -250,12 +250,16 @@ $text-trio-color: #D6C5F0;
     span {
         margin-bottom: 1em;
         border-radius: 1em;
-        border: 2px solid $trio-color;
     }
 }
 
 @media screen and (max-width:750px) {
     .allSection{
         display: block;
+        span{
+            img{
+                margin-bottom: 1em;
+            }
+        }
     }
 }
