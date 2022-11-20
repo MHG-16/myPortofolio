@@ -140,4 +140,14 @@
   .darkMode .controlls div i, .lightMode .controlls div i {
     font-size: 20px;
   }
+}
+@media screen and (max-height: 399px) {
+  .darkMode .controlls .themeButton, .darkMode .controlls div, .lightMode .controlls .themeButton, .lightMode .controlls div {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+  }
+  .darkMode .controlls .themeButton i, .darkMode .controlls div i, .lightMode .controlls .themeButton i, .lightMode .controlls div i {
+    font-size: 10px;
+  }
 }/*# sourceMappingURL=controlls.module.css.map */
