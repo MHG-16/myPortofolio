@@ -15,3 +15,10 @@
         font-size: xx-small;
     }
 }
+
+@media screen and (max-height: 399px) {
+    .langueNavContainer{
+        font-size: small;
+        top: 1%;
+    }
+}
