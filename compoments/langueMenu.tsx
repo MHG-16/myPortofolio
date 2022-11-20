@@ -40,6 +40,6 @@ function onClick(lang: string, setCookies: (name: "cookies", value: any, options
         maxAge: 7200, // Expires after 2hr
         sameSite: true,
     });
-    router.reload()
+    router.push("/sections")
 }
 
