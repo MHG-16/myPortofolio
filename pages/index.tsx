@@ -56,12 +56,16 @@ const Home: NextPage = () =>   {
 
 
 function goTohome(langue: string, setCookies: (name: "cookies", value: any, options?: CookieSetOptions | undefined) => void) {
+    if(langue === "ar")
+        Router.push("/ar");
+    else{
     setCookies("cookies", {langue: langue, isDark: true}, {
         path: "/",
         maxAge: 3600, // Expires after 1hr
         sameSite: true,
     })
     Router.push("/"+"sections");
+    }
 }
 
 export default Home;

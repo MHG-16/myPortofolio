@@ -1,0 +1,15 @@
+.container {
+  background-color: #082032;
+  color: #FF4C29;
+  text-align: center;
+  margin-top: 20%;
+}
+.container button {
+  margin-top: 5%;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  background-color: #2C394B;
+  color: #FB2576;
+  border-radius: 2em;
+}/*# sourceMappingURL=homePage.module.css.map */

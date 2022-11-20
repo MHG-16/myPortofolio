@@ -1,7 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image"
 import React from "react";
-import useModal from "../hooks/ModalHooks";
 
 export default function ListCards(props: ListCardsProps){
     return (

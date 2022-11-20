@@ -1,0 +1,22 @@
+$secondary-color: #2C394B;
+$text-primary-color: #FF4C29;
+$text-secondary-color: #FB2576;
+$primary-color: #082032;
+
+
+.container{
+    background-color: $primary-color;
+    color: $text-primary-color;
+    text-align: center;
+    margin-top: 20% ;
+
+    button{
+        margin-top: 5%;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        background-color: $secondary-color;
+        color: $text-secondary-color;
+        border-radius: 2em;
+    }
+}
