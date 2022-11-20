@@ -18,10 +18,10 @@
         "certificatesTitle": "Certificats"
     },
     "workspace": {
-        "DynamicDesc":"I siti web non devono essere statici,Amo dare vita alle pagine.",
-        "SpeedDesc": "Cerco di creare pagine facendo attenzione alla velocità",
-        "ResponsiveDesc":"I miei layout funzioneranno su qualsiasi dispositivo,mobile or pc",
-        "myWorksTitle": "I miei lovori"
+        "DynamicDesc":"Creation des pages dynamiques",
+        "SpeedDesc": "Chercher de créer des page web rapide plus possible en utilisant les outils ",
+        "ResponsiveDesc":"Les pages web sont compatibles sur différentes dispositives mobiles , pc , ipad",
+        "myWorksTitle": "Mes projets"
     }
     
 }

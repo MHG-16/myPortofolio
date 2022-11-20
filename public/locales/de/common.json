@@ -16,6 +16,12 @@
         "LicenseTitle": "Bachelor in Software Engineering",
         "LicenseDate": "Sep. 2022, Highe Institute of Computer Science and Mathematics Monastir Tunesien",
         "certificatesTitle": "Zertifikate"
+    },
+    "workspace": {
+        "DynamicDesc":"Versuchen so schnell wie moglich , die Websites zu erstellen",
+        "SpeedDesc": "Ich Versuche die ,Webseiten zu erstellen, die auf Geschwindigkeit achten",
+        "ResponsiveDesc":"Reponsive Webseiten erstellen",
+        "myWorksTitle": "Meine Projekte"
     }
     
 }
